@@ -1,9 +1,11 @@
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import "./App.css";
 import CustomButton from "./components/CustomButton";
-import SideBar from "./components/SideBar";
 import NotFound from "./components/NotFound";
 import myStyle from "./styles/MyStyle";
+import DefaultSideBar from './components/DefaultSideBar';
+// import TestDrawer from "./components/TestDrawer";
+// import SideBar from "./components/SideBar";
 
 function App() {
   return (
@@ -28,7 +30,9 @@ function App() {
             </Route>
           </Switch>
         </Router>
-        <SideBar />
+        {/* <TestDrawer /> */}
+        {/* <SideBar /> */}
+        <DefaultSideBar />
       </header>
     </div>
   );
