@@ -18,7 +18,8 @@ import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import { fade } from "@material-ui/core/styles/colorManipulator";
-import { colors } from "@material-ui/core";
+import { Box, colors } from "@material-ui/core";
+import SwitchTheme from "./SwitchTheme";
 
 const drawerWidth = 240;
 
@@ -127,6 +128,9 @@ export default function MiniDrawer() {
           <Typography variant="h6" noWrap>
             Mini variant drawer
           </Typography>
+          <Box ml="auto" mr={3} >
+            <SwitchTheme />
+          </Box>
         </Toolbar>
       </AppBar>
       <Drawer

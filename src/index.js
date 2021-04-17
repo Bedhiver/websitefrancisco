@@ -4,10 +4,16 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "@material-ui/styles";
-import theme from "./themes/DefaultTheme";
+import DefaultTheme from "./themes/DefaultTheme";
+
+const defaultTheme = new DefaultTheme();
 
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
+  <ThemeProvider
+    theme={
+      defaultTheme.darkTheme ? defaultTheme.darkTheme : defaultTheme.lightTheme
+    }
+  >
     <React.StrictMode>
       <App />
     </React.StrictMode>
