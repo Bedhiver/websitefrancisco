@@ -2,26 +2,26 @@ import { FormControlLabel, Switch } from "@material-ui/core";
 import { useState } from "react";
 
 export default function SwitchTheme(props) {
-  
-//     const [state, setState, labelName] = useState({
-//     checked: true,
-//   });
+  const [state, setState] = useState({
+    checked: true,
+  });
 
-//   const handleChange = (event) => {
-//     setState({ ...state, [event.target.name]: event.target.checked });
-//   };
+  const handleChange = (event) => {
+    setState({ ...state, [event.target.name]: event.target.checked });
+    props.switchModeTheme();
+  };
 
   return (
     <FormControlLabel
       control={
         <Switch
-          checked={props.checked}
-          onChange={props.onChange}
+          checked={state.checked}
+          onChange={handleChange}
           name="checked"
           color="secondary"
         />
       }
-      label={props.label}
+      label={props.labelName}
     />
   );
 }

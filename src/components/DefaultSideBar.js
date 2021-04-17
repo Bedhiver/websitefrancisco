@@ -91,7 +91,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MiniDrawer() {
+export default function MiniDrawer(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -128,8 +128,11 @@ export default function MiniDrawer() {
           <Typography variant="h6" noWrap>
             Mini variant drawer
           </Typography>
-          <Box ml="auto" mr={3} >
-            <SwitchTheme />
+          <Box ml="auto" mr={3}>
+            <SwitchTheme
+              switchModeTheme={props.onChangeTheme}
+              labelName={props.labelName}
+            />
           </Box>
         </Toolbar>
       </AppBar>

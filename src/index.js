@@ -3,21 +3,26 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { ThemeProvider } from "@material-ui/styles";
-import DefaultTheme from "./themes/DefaultTheme";
 
-const defaultTheme = new DefaultTheme();
+// let isDark = true;
+
+// const [myTheme, setTheme] = useState(true);
+
+// const onChangeTheme = () => {
+//   isDark = !isDark;
+//   console.log("index dark");
+
+//   if (myTheme === defaultTheme.lightTheme) {
+//     setTheme(false);
+//   } else {
+//     setTheme(true);
+//   }
+// };
 
 ReactDOM.render(
-  <ThemeProvider
-    theme={
-      defaultTheme.darkTheme ? defaultTheme.darkTheme : defaultTheme.lightTheme
-    }
-  >
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </ThemeProvider>,
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
   document.getElementById("root")
 );
 

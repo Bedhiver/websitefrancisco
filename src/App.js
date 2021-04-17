@@ -4,13 +4,27 @@ import CustomButton from "./components/CustomButton";
 import NotFound from "./components/NotFound";
 import myStyle from "./styles/MyStyle";
 import DefaultSideBar from "./components/DefaultSideBar";
-import React from "react";
-// import TestDrawer from "./components/TestDrawer";
-// import SideBar from "./components/SideBar";
+import React, { useState } from "react";
+import DefaultTheme from "./themes/DefaultTheme";
+import { ThemeProvider } from "@material-ui/styles";
 
-class App extends React.Component {
-  render() {
-    return (
+export default function App() {
+  const [isDark, setTheme] = useState(true);
+  const [labelName, setLabelName] = useState("Dark Thème");
+  const defaultTheme = new DefaultTheme();
+
+  let foo = isDark ? "Dark Thème" : "Light Thème";
+
+  const onChangeTheme = () => {
+    setTheme(!isDark);
+    foo = isDark ? "Dark Thème" : "Light Thème";
+    setLabelName(isDark ? "Dark Thème" : "Light Thème");
+  };
+
+  return (
+    <ThemeProvider
+      theme={isDark ? defaultTheme.darkTheme : defaultTheme.lightTheme}
+    >
       <div className="App">
         <header className="App-header">
           <Router>
@@ -32,13 +46,9 @@ class App extends React.Component {
               </Route>
             </Switch>
           </Router>
-          {/* <TestDrawer /> */}
-          {/* <SideBar /> */}
-          <DefaultSideBar />
+          <DefaultSideBar onChangeTheme={onChangeTheme} labelName={labelName} />
         </header>
       </div>
-    );
-  }
+    </ThemeProvider>
+  );
 }
-
-export default App;
