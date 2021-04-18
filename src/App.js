@@ -12,7 +12,7 @@ export default function App() {
   const [isDark, setTheme] = useState(true);
   const defaultTheme = new DefaultTheme();
 
-  const onChangeTheme = (checked) => {
+  const onChangeTheme = () => {
     setTheme(!isDark);
   };
 

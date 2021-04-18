@@ -1,5 +1,6 @@
 import { FormControlLabel, Switch } from "@material-ui/core";
 import { useState } from "react";
+import { language } from "../languages/translations";
 
 export default function SwitchTheme(props) {
   const [state, setState] = useState({
@@ -8,7 +9,7 @@ export default function SwitchTheme(props) {
 
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
-    props.switchModeTheme(state.checked);
+    props.switchModeTheme();
   };
 
   return (
@@ -21,7 +22,9 @@ export default function SwitchTheme(props) {
           color="secondary"
         />
       }
-      label={state.checked ? "Dark Thème" : "Light Thème"}
+      label={
+        state.checked ? language.french.darkTheme : language.french.lightTheme
+      }
     />
   );
 }
