@@ -7,6 +7,7 @@ import DefaultSideBar from "./components/DefaultSideBar";
 import React, { useState } from "react";
 import DefaultTheme from "./themes/DefaultTheme";
 import { ThemeProvider } from "@material-ui/styles";
+import { translateTo } from "./languages/translations";
 
 export default function App() {
   const [isDark, setTheme] = useState(true);
@@ -15,6 +16,8 @@ export default function App() {
   const onChangeTheme = () => {
     setTheme(!isDark);
   };
+
+  const language = translateTo("english");
 
   return (
     <ThemeProvider
@@ -41,7 +44,7 @@ export default function App() {
               </Route>
             </Switch>
           </Router>
-          <DefaultSideBar onChangeTheme={onChangeTheme} />
+          <DefaultSideBar onChangeTheme={onChangeTheme} language={language} />
         </header>
       </div>
     </ThemeProvider>

@@ -131,7 +131,7 @@ export default function MiniDrawer(props) {
           <Box ml="auto" mr={3}>
             <SwitchTheme
               switchModeTheme={props.onChangeTheme}
-              labelName={props.labelName}
+              language={props.language}
             />
           </Box>
         </Toolbar>

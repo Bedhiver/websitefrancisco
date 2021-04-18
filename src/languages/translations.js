@@ -1,7 +1,13 @@
 import { english } from "./english";
 import { french } from "./french";
 
-export const language = {
-  french,
-  english,
-};
+export function translateTo(toLanguage) {
+  switch (toLanguage) {
+    case "french":
+      return french;
+    case "english":
+      return english;
+    default:
+      break;
+  }
+}
