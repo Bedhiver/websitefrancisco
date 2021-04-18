@@ -10,15 +10,10 @@ import { ThemeProvider } from "@material-ui/styles";
 
 export default function App() {
   const [isDark, setTheme] = useState(true);
-  const [labelName, setLabelName] = useState("Dark Thème");
   const defaultTheme = new DefaultTheme();
 
-  let foo = isDark ? "Dark Thème" : "Light Thème";
-
-  const onChangeTheme = () => {
+  const onChangeTheme = (checked) => {
     setTheme(!isDark);
-    foo = isDark ? "Dark Thème" : "Light Thème";
-    setLabelName(isDark ? "Dark Thème" : "Light Thème");
   };
 
   return (
@@ -46,7 +41,7 @@ export default function App() {
               </Route>
             </Switch>
           </Router>
-          <DefaultSideBar onChangeTheme={onChangeTheme} labelName={labelName} />
+          <DefaultSideBar onChangeTheme={onChangeTheme} />
         </header>
       </div>
     </ThemeProvider>

@@ -8,7 +8,7 @@ export default function SwitchTheme(props) {
 
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
-    props.switchModeTheme();
+    props.switchModeTheme(state.checked);
   };
 
   return (
@@ -21,7 +21,7 @@ export default function SwitchTheme(props) {
           color="secondary"
         />
       }
-      label={props.labelName}
+      label={state.checked ? "Dark Thème" : "Light Thème"}
     />
   );
 }
