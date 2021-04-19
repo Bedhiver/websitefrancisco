@@ -4,21 +4,6 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-// let isDark = true;
-
-// const [myTheme, setTheme] = useState(true);
-
-// const onChangeTheme = () => {
-//   isDark = !isDark;
-//   console.log("index dark");
-
-//   if (myTheme === defaultTheme.lightTheme) {
-//     setTheme(false);
-//   } else {
-//     setTheme(true);
-//   }
-// };
-
 ReactDOM.render(
   <React.StrictMode>
     <App />

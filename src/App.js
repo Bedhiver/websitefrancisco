@@ -17,7 +17,7 @@ export default function App() {
     setTheme(!isDark);
   };
 
-  const language = translateTo("english");
+  const language = translateTo("french");
 
   return (
     <ThemeProvider

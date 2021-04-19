@@ -22,9 +22,7 @@ export default function SwitchTheme(props) {
         />
       }
       label={
-        state.checked
-          ? props.language.darkTheme
-          : props.language.lightTheme
+        state.checked ? props.language.darkTheme : props.language.lightTheme
       }
     />
   );

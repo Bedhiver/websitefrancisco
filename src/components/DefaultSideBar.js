@@ -20,6 +20,7 @@ import MailIcon from "@material-ui/icons/Mail";
 import { fade } from "@material-ui/core/styles/colorManipulator";
 import { Box, colors } from "@material-ui/core";
 import SwitchTheme from "./SwitchTheme";
+import profilePhoto from "./../assets/photoprofil.jpg";
 
 const drawerWidth = 240;
 
@@ -45,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     marginRight: 36,
     "&:hover": {
-      backgroundColor: fade(colors.red[900], 0.2),
+      backgroundColor: fade(colors.common.black, 0.1),
       "@media (hover: none)": {
         backgroundColor: "transparent",
       },
@@ -126,7 +127,7 @@ export default function MiniDrawer(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Mini variant drawer
+            Francisco FERNANDEZ
           </Typography>
           <Box ml="auto" mr={3}>
             <SwitchTheme
@@ -159,6 +160,7 @@ export default function MiniDrawer(props) {
           </IconButton>
         </div>
         {/* <Divider /> */}
+        <img src={profilePhoto} alt={profilePhoto} style={{margin: 10, border: "2px solid #021a40"}} />
         <List>
           {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
             <ListItem button key={text}>
