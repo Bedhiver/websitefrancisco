@@ -1,13 +1,13 @@
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import CustomButton from "./components/CustomButton";
 import NotFound from "./components/NotFound";
-import myStyle from "./styles/MyStyle";
-import DefaultSideBar from "./components/DefaultSideBar";
+import DrawerLeft from "./components/DrawerLeft";
 import React, { useState } from "react";
 import DefaultTheme from "./themes/DefaultTheme";
 import { ThemeProvider } from "@material-ui/styles";
 import { translateTo } from "./languages/translations";
+import CustomLink from "./components/CustomLink";
 
 export default function App() {
   const [isDark, setTheme] = useState(true);
@@ -19,6 +19,11 @@ export default function App() {
 
   const language = translateTo("french");
 
+  const path = {
+    toHello: "/hello",
+    toHome: "/",
+  };
+
   return (
     <ThemeProvider
       theme={isDark ? defaultTheme.darkTheme : defaultTheme.lightTheme}
@@ -27,16 +32,12 @@ export default function App() {
         <header className="App-header">
           <Router>
             <Switch>
-              <Route path="/hello">
-                <Link to="/" style={myStyle.linkStyle}>
-                  <CustomButton />
-                </Link>
+              <Route exact path="/hello">
+                <CustomLink to={path.toHome} content={<CustomButton />} />
               </Route>
               <Route exact path="/">
                 <div>
-                  <Link to="/hello" style={myStyle.linkStyle}>
-                    <h1>HELLO</h1>
-                  </Link>
+                  <CustomLink to={path.toHello} content={<h1>HELLO</h1>} />
                 </div>
               </Route>
               <Route path="*">
@@ -44,7 +45,8 @@ export default function App() {
               </Route>
             </Switch>
           </Router>
-          <DefaultSideBar onChangeTheme={onChangeTheme} language={language} />
+
+          <DrawerLeft onChangeTheme={onChangeTheme} language={language} />
         </header>
       </div>
     </ThemeProvider>

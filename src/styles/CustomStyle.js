@@ -1,5 +1,5 @@
-const myStyle = {
+const customStyle = {
   linkStyle: { textDecoration: "none", color: "white" },
 };
 
-export default myStyle;
+export default customStyle;

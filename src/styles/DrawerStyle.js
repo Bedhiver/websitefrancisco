@@ -1,4 +1,4 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { fade, colors, makeStyles } from "@material-ui/core";
 
 const drawerWidth = 240;
 
@@ -7,7 +7,6 @@ const DrawerStyle = makeStyles((theme) => ({
     display: "flex",
   },
   appBar: {
-    backgroundColor: "#60b5ca",
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(["width", "margin"], {
       easing: theme.transitions.easing.sharp,
@@ -24,6 +23,12 @@ const DrawerStyle = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: 36,
+    "&:hover": {
+      backgroundColor: fade(colors.common.black, 0.1),
+      "@media (hover: none)": {
+        backgroundColor: "transparent",
+      },
+    },
   },
   hide: {
     display: "none",
@@ -34,8 +39,6 @@ const DrawerStyle = makeStyles((theme) => ({
     whiteSpace: "nowrap",
   },
   drawerOpen: {
-    backgroundColor: "#414347",
-
     width: drawerWidth,
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
@@ -43,8 +46,6 @@ const DrawerStyle = makeStyles((theme) => ({
     }),
   },
   drawerClose: {
-    backgroundColor: "#414347",
-
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -56,7 +57,6 @@ const DrawerStyle = makeStyles((theme) => ({
     },
   },
   toolbar: {
-    // backgroundColor: "#60b5ca",
     display: "flex",
     alignItems: "center",
     justifyContent: "flex-end",
@@ -67,9 +67,6 @@ const DrawerStyle = makeStyles((theme) => ({
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
-  },
-  iconcolor: {
-      color: "white",
   },
 }));
 
