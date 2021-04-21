@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import "./App.css";
 import CustomButton from "./components/CustomButton";
 import NotFound from "./components/NotFound";
 import DrawerLeft from "./components/DrawerLeft";
@@ -19,10 +18,10 @@ export default function App() {
 
   const language = translateTo("french");
 
-  const path = {
-    toHello: "/hello",
-    toHome: "/",
-  };
+  // const path = {
+  //   toHello: "/hello",
+  //   toHome: "/",
+  // };
 
   return (
     <ThemeProvider
@@ -30,7 +29,7 @@ export default function App() {
     >
       <div className="App">
         <header className="App-header">
-          <Router>
+          {/* <Router>
             <Switch>
               <Route exact path="/hello">
                 <CustomLink to={path.toHome} content={<CustomButton />} />
@@ -44,7 +43,7 @@ export default function App() {
                 <NotFound />
               </Route>
             </Switch>
-          </Router>
+          </Router> */}
 
           <DrawerLeft onChangeTheme={onChangeTheme} language={language} />
         </header>

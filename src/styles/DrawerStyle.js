@@ -64,6 +64,12 @@ const DrawerStyle = makeStyles((theme) => ({
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
   },
+  itemContent: {
+    display: "flex",
+    height: "20vh",
+    alignItems: "center",
+    justifyContent: "center",
+  },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),

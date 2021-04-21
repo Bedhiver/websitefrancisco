@@ -20,7 +20,11 @@ import MailIcon from "@material-ui/icons/Mail";
 import { Box } from "@material-ui/core";
 import SwitchTheme from "./SwitchTheme";
 import profilePhoto from "./../assets/photoprofil.jpg";
-import DrawerStyle from './../styles/DrawerStyle';
+import DrawerStyle from "./../styles/DrawerStyle";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import CustomLink from "./CustomLink";
+import CustomButton from "./CustomButton";
+import NotFound from "./NotFound";
 
 export default function MiniDrawer(props) {
   const classes = DrawerStyle();
@@ -33,6 +37,11 @@ export default function MiniDrawer(props) {
 
   const handleDrawerClose = () => {
     setOpen(false);
+  };
+
+  const path = {
+    toHello: "/hello",
+    toHome: "/",
   };
 
   return (
@@ -90,7 +99,11 @@ export default function MiniDrawer(props) {
           </IconButton>
         </div>
         {/* <Divider /> */}
-        <img src={profilePhoto} alt={profilePhoto} style={{margin: 10, border: "2px solid #021a40"}} />
+        <img
+          src={profilePhoto}
+          alt={profilePhoto}
+          style={{ margin: 10, border: "2px solid #021a40" }}
+        />
         <List>
           {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
             <ListItem button key={text}>
@@ -114,6 +127,23 @@ export default function MiniDrawer(props) {
         </List>
       </Drawer>
       <main className={classes.content}>
+        <div className={classes.itemContent}>
+          <Router>
+            <Switch>
+              <Route exact path="/hello">
+                <CustomLink to={path.toHome} content={<CustomButton />} />
+              </Route>
+              <Route exact path="/">
+                <div>
+                  <CustomLink to={path.toHello} content={<h1>HELLO</h1>} />
+                </div>
+              </Route>
+              <Route path="*">
+                <NotFound />
+              </Route>
+            </Switch>
+          </Router>
+        </div>
         <div className={classes.toolbar} />
         <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
