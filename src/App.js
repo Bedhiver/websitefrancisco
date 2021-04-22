@@ -1,12 +1,8 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import CustomButton from "./components/CustomButton";
-import NotFound from "./components/NotFound";
 import DrawerLeft from "./components/DrawerLeft";
 import React, { useState } from "react";
 import DefaultTheme from "./themes/DefaultTheme";
 import { ThemeProvider } from "@material-ui/styles";
 import { translateTo } from "./languages/translations";
-import CustomLink from "./components/CustomLink";
 
 export default function App() {
   const [isDark, setTheme] = useState(true);
