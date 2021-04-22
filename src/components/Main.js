@@ -3,14 +3,69 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import CustomLink from "./CustomLink";
 import CustomButton from "./CustomButton";
 import NotFound from "./NotFound";
-import { Typography } from "@material-ui/core";
+import { makeStyles, Typography } from "@material-ui/core";
+import Card from "./Card";
+import { Grid, Paper } from "@material-ui/core";
 
 export default function Main(props) {
   const classes = props.classes;
   const path = props.path;
 
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      flexGrow: 1,
+    },
+    divPos: {
+      paddingTop: "12%",
+    },
+    paper: {
+      padding: theme.spacing(2),
+      textAlign: "center",
+      color: theme.palette.text.secondary,
+    },
+  }));
+
+  const GridItemLoop = () => {
+    let content = [];
+    for (let i = 0; i < 3; i++) {
+      content.push(
+        <Grid item xs>
+          <Paper className={classes.paper}>
+            <Card />
+          </Paper>
+        </Grid>
+      );
+    }
+    return content;
+  };
+
+  const customStyle = useStyles();
+
   return (
     <main className={classes.content}>
+      <div className={customStyle.divPos}>
+        <Grid container spacing={3}>
+          {GridItemLoop()}
+        </Grid>
+        {/* <Grid container spacing={3}>
+          <Grid item xs>
+            <Paper className={classes.paper}>
+              <Card />
+            </Paper>
+          </Grid>
+          <Grid item xs>
+            <Paper className={classes.paper}>
+              <Card />
+            </Paper>
+          </Grid>
+          <Grid item xs>
+            <Paper className={classes.paper}>
+              <Card />
+            </Paper>
+          </Grid>
+        </Grid> */}
+        {/* <Card /> */}
+      </div>
       <div className={classes.itemContent}>
         <Router>
           <Switch>
