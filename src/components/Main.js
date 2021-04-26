@@ -7,47 +7,49 @@ import { makeStyles, Typography } from "@material-ui/core";
 import Card from "./Card";
 import { Grid, Paper } from "@material-ui/core";
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+    marginTop: "50px",
+  },
+  paper: {
+    maxWidth: 300,
+    // minHeight: 250,
+    // minWidth: 250,
+    // maxHeight: 500,
+    // width: 250,
+
+    // padding: theme.spacing(2),
+    // textAlign: "center",
+    // color: theme.palette.text.secondary,
+  },
+}));
+
 export default function Main(props) {
   const classes = props.classes;
   const path = props.path;
+  const customStyle = useStyles();
 
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 1,
-    },
-    divPos: {
-      paddingTop: "12%",
-    },
-    paper: {
-      padding: theme.spacing(2),
-      textAlign: "center",
-      color: theme.palette.text.secondary,
-    },
-  }));
-
-  const GridItemLoop = () => {
+  function GridItemLoop() {
     let content = [];
     for (let i = 0; i < 3; i++) {
       content.push(
-        <Grid item xs>
-          <Paper className={classes.paper}>
+        <Grid item>
+          <Paper className={customStyle.paper}>
             <Card />
           </Paper>
         </Grid>
       );
     }
     return content;
-  };
-
-  const customStyle = useStyles();
+  }
 
   return (
     <main className={classes.content}>
-      <div className={customStyle.divPos}>
-        <Grid container spacing={3}>
-          {GridItemLoop()}
-        </Grid>
-        {/* <Grid container spacing={3}>
+      <Grid container spacing={3} justify="center" className={customStyle.root}>
+        {GridItemLoop()}
+      </Grid>
+      {/* <Grid container spacing={3}>
           <Grid item xs>
             <Paper className={classes.paper}>
               <Card />
@@ -64,8 +66,7 @@ export default function Main(props) {
             </Paper>
           </Grid>
         </Grid> */}
-        {/* <Card /> */}
-      </div>
+      {/* <Card /> */}
       <div className={classes.itemContent}>
         <Router>
           <Switch>
