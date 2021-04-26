@@ -7,7 +7,6 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import reactsvg from "./../assets/react-1.svg";
 
 const useStyles = makeStyles({
   root: {
@@ -20,23 +19,28 @@ const useStyles = makeStyles({
     objectFit: "fill",
     width: "100%",
     height: "100%",
+    minHeight: 300,
+  },
+  divStyle: {
+    minHeight: 300,
+    backgroundColor: "#222222",
   },
 });
 
-export default function MediaCard() {
+export default function MediaCard({ imgsrc, title }) {
   const classes = useStyles();
 
   return (
     <Card className={classes.root}>
       <CardActionArea>
-        {/* <div style={{ height: "200px" }}>
-        </div> */}
+        <div className={classes.divStyle}>
           <CardMedia
             component="img"
             className={classes.media}
-            image={reactsvg}
-            title="Contemplative Reptile"
+            image={imgsrc}
+            title={title}
           />
+        </div>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             Lizard

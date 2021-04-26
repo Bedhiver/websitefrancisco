@@ -6,6 +6,8 @@ import NotFound from "./NotFound";
 import { makeStyles, Typography } from "@material-ui/core";
 import Card from "./Card";
 import { Grid, Paper } from "@material-ui/core";
+import muisvg from './../assets/material-ui-1.svg';
+import reactsvg from './../assets/react-1.svg';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,29 +27,47 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const foo = [
+  {
+    img: reactsvg,
+    title: "react svg",
+  },
+  {
+    img: muisvg,
+    title: "material ui svg",
+  },
+];
+
 export default function Main(props) {
   const classes = props.classes;
   const path = props.path;
   const customStyle = useStyles();
 
-  function GridItemLoop() {
-    let content = [];
-    for (let i = 0; i < 3; i++) {
-      content.push(
-        <Grid item>
-          <Paper className={customStyle.paper}>
-            <Card />
-          </Paper>
-        </Grid>
-      );
-    }
-    return content;
-  }
+  // function GridItemLoop() {
+  //   let content = [];
+  //   for (let i = 0; i < 3; i++) {
+  //     content.push(
+  //       <Grid item>
+  //         <Paper className={customStyle.paper}>
+  //           <Card />
+  //         </Paper>
+  //       </Grid>
+  //     );
+  //   }
+  //   return content;
+  // }
 
   return (
     <main className={classes.content}>
       <Grid container spacing={3} justify="center" className={customStyle.root}>
-        {GridItemLoop()}
+        {/* {GridItemLoop()} */}
+        {foo.map((imgsrc) => (
+          <Grid item>
+            <Paper className={customStyle.paper}>
+              <Card imgsrc={imgsrc.img} title={imgsrc.title} />
+            </Paper>
+          </Grid>
+        ))}
       </Grid>
       {/* <Grid container spacing={3}>
           <Grid item xs>
