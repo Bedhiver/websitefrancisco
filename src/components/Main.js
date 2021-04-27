@@ -3,90 +3,73 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import CustomLink from "./CustomLink";
 import CustomButton from "./CustomButton";
 import NotFound from "./NotFound";
-import { makeStyles, Typography } from "@material-ui/core";
+import { Box, Button, makeStyles, Typography } from "@material-ui/core";
 import Card from "./Card";
 import { Grid, Paper } from "@material-ui/core";
-import muisvg from './../assets/material-ui-1.svg';
-import reactsvg from './../assets/react-1.svg';
+import svgArray from "./../assets/index";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    // marginTop: "50px",
+  },
+  paperGrid: {
     marginTop: "50px",
+    // marginLeft: "50px",
+    // marginRight: "50px",
+    // paddingBottom: "50px",
   },
   paper: {
     maxWidth: 300,
-    // minHeight: 250,
+    // minHeight: 1000,
     // minWidth: 250,
-    // maxHeight: 500,
     // width: 250,
+    // maxHeight: 500,
 
     // padding: theme.spacing(2),
     // textAlign: "center",
     // color: theme.palette.text.secondary,
   },
+  typoPos: {
+    display: "flex",
+    height: "10vh",
+    alignItems: "center",
+    justifyContent: "center",
+  },
 }));
-
-const foo = [
-  {
-    img: reactsvg,
-    title: "react svg",
-  },
-  {
-    img: muisvg,
-    title: "material ui svg",
-  },
-];
 
 export default function Main(props) {
   const classes = props.classes;
   const path = props.path;
   const customStyle = useStyles();
 
-  // function GridItemLoop() {
-  //   let content = [];
-  //   for (let i = 0; i < 3; i++) {
-  //     content.push(
-  //       <Grid item>
-  //         <Paper className={customStyle.paper}>
-  //           <Card />
-  //         </Paper>
-  //       </Grid>
-  //     );
-  //   }
-  //   return content;
-  // }
-
   return (
     <main className={classes.content}>
-      <Grid container spacing={3} justify="center" className={customStyle.root}>
-        {/* {GridItemLoop()} */}
-        {foo.map((imgsrc) => (
-          <Grid item>
-            <Paper className={customStyle.paper}>
-              <Card imgsrc={imgsrc.img} title={imgsrc.title} />
-            </Paper>
-          </Grid>
-        ))}
-      </Grid>
-      {/* <Grid container spacing={3}>
-          <Grid item xs>
-            <Paper className={classes.paper}>
-              <Card />
-            </Paper>
-          </Grid>
-          <Grid item xs>
-            <Paper className={classes.paper}>
-              <Card />
-            </Paper>
-          </Grid>
-          <Grid item xs>
-            <Paper className={classes.paper}>
-              <Card />
-            </Paper>
-          </Grid>
-        </Grid> */}
-      {/* <Card /> */}
+      <Paper className={customStyle.paperGrid}>
+        <Typography className={customStyle.typoPos} variant="h5">
+          Technologies utilisées :
+        </Typography>
+        <Grid
+          container
+          spacing={3}
+          justify="center"
+          className={customStyle.root}
+        >
+          {/* {GridItemLoop()} */}
+          {svgArray.map((imgsrc) => (
+            <Grid item key={imgsrc.img}>
+              <Paper className={customStyle.paper}>
+                <Card
+                  imgSrc={imgsrc.img}
+                  title={imgsrc.title}
+                  description={imgsrc.description}
+                  website={imgsrc.website}
+                />
+              </Paper>
+            </Grid>
+          ))}
+        </Grid>
+      </Paper>
       <div className={classes.itemContent}>
         <Router>
           <Switch>
@@ -94,18 +77,29 @@ export default function Main(props) {
               <CustomLink to={path.toHome} content={<CustomButton />} />
             </Route>
             <Route exact path="/">
-              <div>
-                <CustomLink
-                  to={path.toHello}
-                  content={<Typography variant="h5">HELLO</Typography>}
-                />
-              </div>
+              <CustomLink
+                to={path.toHello}
+                content={
+                  <Box color="text.primary">
+                    <Typography variant="h5">HELLO</Typography>
+                  </Box>
+                }
+              />
             </Route>
             <Route path="*">
               <NotFound />
             </Route>
           </Switch>
         </Router>
+        <Button
+          variant="contained"
+          color="primary"
+          target="_blank"
+          rel="noreferrer"
+          href="https://fr.reactjs.org/"
+        >
+          test link
+        </Button>
       </div>
       <div className={classes.toolbar} />
       <Typography paragraph>

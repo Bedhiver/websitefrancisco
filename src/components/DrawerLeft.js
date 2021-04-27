@@ -95,7 +95,6 @@ export default function MiniDrawer(props) {
             )}
           </IconButton>
         </div>
-        {/* <Divider /> */}
         <img
           src={profilePhoto}
           alt={profilePhoto}
