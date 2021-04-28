@@ -1,0 +1,21 @@
+#techUsedTypo {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+#presentationImage {
+  margin-top: 64px;
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  img#presentationImage {
+    display: none;
+  }
+  #techUsedTypo {
+    margin-top: 70px;
+    margin-bottom: 10px;
+    display: flex;
+  }
+}

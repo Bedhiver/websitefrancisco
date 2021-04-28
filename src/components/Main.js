@@ -6,11 +6,15 @@ import NotFound from "./NotFound";
 import { Box, Button, makeStyles, Typography } from "@material-ui/core";
 import Card from "./Card";
 import { Grid, Paper } from "@material-ui/core";
-import svgArray from "./../assets/index";
+import { svgArray, developerWallpaper } from "./../assets/index";
+import "./../styles/StyleForMobile.css";
+import { grey } from "@material-ui/core/colors";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    width: "100%",
+    marginLeft: "0px",
     // marginTop: "50px",
   },
   paperGrid: {
@@ -31,10 +35,19 @@ const useStyles = makeStyles((theme) => ({
     // color: theme.palette.text.secondary,
   },
   typoPos: {
+    marginTop: "10px",
+    marginBottom: "10px",
     display: "flex",
-    height: "10vh",
-    alignItems: "center",
-    justifyContent: "center",
+    // height: "10vh",
+    // alignItems: "center",
+    // justifyContent: "center",
+  },
+  typoImagePos: {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%,-50%)",
+    color: grey[300],
   },
 }));
 
@@ -45,31 +58,29 @@ export default function Main(props) {
 
   return (
     <main className={classes.content}>
-      <Paper className={customStyle.paperGrid}>
-        <Typography className={customStyle.typoPos} variant="h5">
-          Technologies utilisées :
+      <div style={{ position: "relative", textAlign: "center" }}>
+        <img id="presentationImage" src={developerWallpaper} alt="" />
+        <Typography className={customStyle.typoImagePos} variant="h2">
+          Développeur d'application
         </Typography>
-        <Grid
-          container
-          spacing={3}
-          justify="center"
-          className={customStyle.root}
-        >
-          {/* {GridItemLoop()} */}
-          {svgArray.map((imgsrc) => (
-            <Grid item key={imgsrc.img}>
-              <Paper className={customStyle.paper}>
-                <Card
-                  imgSrc={imgsrc.img}
-                  title={imgsrc.title}
-                  description={imgsrc.description}
-                  website={imgsrc.website}
-                />
-              </Paper>
-            </Grid>
-          ))}
-        </Grid>
-      </Paper>
+      </div>
+      <Typography id="techUsedTypo" variant="h5">
+        Technologies utilisées pour réaliser ce siteweb :
+      </Typography>
+      <Grid container spacing={3} justify="center" className={customStyle.root}>
+        {svgArray.map((imgsrc) => (
+          <Grid item key={imgsrc.img}>
+            <Paper className={customStyle.paper}>
+              <Card
+                imgSrc={imgsrc.img}
+                title={imgsrc.title}
+                description={imgsrc.description}
+                website={imgsrc.website}
+              />
+            </Paper>
+          </Grid>
+        ))}
+      </Grid>
       <div className={classes.itemContent}>
         <Router>
           <Switch>

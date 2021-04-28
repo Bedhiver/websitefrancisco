@@ -32,7 +32,12 @@ export default function MediaCard({ imgSrc, title, description, website }) {
   const classes = useStyles();
 
   return (
-    <a style={{ textDecoration: "none" }} target="_blank" rel="noreferrer" href={website}>
+    <a
+      style={{ textDecoration: "none" }}
+      target="_blank"
+      rel="noreferrer"
+      href={website}
+    >
       <Card className={classes.root}>
         {/* <Router> */}
         {/* <CardActionArea component={Link} to="https://fr.reactjs.org/"> */}

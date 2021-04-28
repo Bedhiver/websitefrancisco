@@ -1,8 +1,9 @@
 import muisvg from "./material-ui-1.svg";
 import reactsvg from "./react-1.svg";
 import jssvg from "./logo-javascript.svg";
+// import developerType from './developerType.jpeg';
 
-const svgArray = [
+export const svgArray = [
   {
     img: jssvg,
     title: "Javascript",
@@ -26,4 +27,4 @@ const svgArray = [
   },
 ];
 
-export default svgArray;
+export { default as developerWallpaper } from "./developerWallpaper.png";
