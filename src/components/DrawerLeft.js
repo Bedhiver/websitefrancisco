@@ -20,11 +20,11 @@ import MailIcon from "@material-ui/icons/Mail";
 import { Box } from "@material-ui/core";
 import SwitchTheme from "./SwitchTheme";
 import profilePhoto from "./../assets/photoprofil.jpg";
-import DrawerStyle from "./../styles/DrawerStyle";
+import DrawerLeftStyle from "../styles/DrawerLeftStyle";
 import Main from "./Main";
 
 export default function MiniDrawer(props) {
-  const classes = DrawerStyle();
+  const classes = DrawerLeftStyle();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -98,7 +98,7 @@ export default function MiniDrawer(props) {
         <img
           src={profilePhoto}
           alt={profilePhoto}
-          style={{ margin: 10, border: "2px solid #021a40" }}
+          style={{ margin: 10, border: "1px solid #021a40" }}
         />
         <List>
           {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (

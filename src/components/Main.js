@@ -3,70 +3,48 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import CustomLink from "./CustomLink";
 import CustomButton from "./CustomButton";
 import NotFound from "./NotFound";
-import { Box, Button, makeStyles, Typography } from "@material-ui/core";
+import { Box, Button, Typography } from "@material-ui/core";
 import Card from "./Card";
 import { Grid, Paper } from "@material-ui/core";
-import { svgArray, developerWallpaper } from "./../assets/index";
-import "./../styles/StyleForMobile.css";
-import { grey } from "@material-ui/core/colors";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    width: "100%",
-    marginLeft: "0px",
-    // marginTop: "50px",
-  },
-  paperGrid: {
-    marginTop: "50px",
-    // marginLeft: "50px",
-    // marginRight: "50px",
-    // paddingBottom: "50px",
-  },
-  paper: {
-    maxWidth: 300,
-    // minHeight: 1000,
-    // minWidth: 250,
-    // width: 250,
-    // maxHeight: 500,
-
-    // padding: theme.spacing(2),
-    // textAlign: "center",
-    // color: theme.palette.text.secondary,
-  },
-  typoPos: {
-    marginTop: "10px",
-    marginBottom: "10px",
-    display: "flex",
-    // height: "10vh",
-    // alignItems: "center",
-    // justifyContent: "center",
-  },
-  typoImagePos: {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%,-50%)",
-    color: grey[300],
-  },
-}));
+import {
+  svgArray,
+  developerWallpaper,
+  otherWallpaper,
+} from "./../assets/index";
+import "./../styles/MainStyle.css";
+import MainStyle from "../styles/MainStyle";
 
 export default function Main(props) {
   const classes = props.classes;
   const path = props.path;
-  const customStyle = useStyles();
+  const customStyle = MainStyle();
 
   return (
     <main className={classes.content}>
-      <div style={{ position: "relative", textAlign: "center" }}>
-        <img id="presentationImage" src={developerWallpaper} alt="" />
-        <Typography className={customStyle.typoImagePos} variant="h2">
-          Développeur d'application
-        </Typography>
+      <div id="divImage">
+        <img className="firstImage" src={developerWallpaper} alt="" />
+        <img className="secondImage" src={otherWallpaper} alt="" />
+        <Paper className={customStyle.paperSurroundTypoStyle} elevation={5}>
+          <Typography className={customStyle.typoImageStyle} variant="h2">
+            Développeur d'application
+          </Typography>
+        </Paper>
       </div>
+
       <Typography id="techUsedTypo" variant="h5">
         Technologies utilisées pour réaliser ce siteweb :
       </Typography>
+      {/* <h1>
+        <span
+          class="typewrite"
+          data-period="2000"
+          data-type='[ "Je suis un développeur juni...", "Je suis un développeur ENORME" ]'
+        >
+          <span class="wrap"></span>
+        </span>
+      </h1>
+      <script src={foowriter} ></script> */}
+
       <Grid container spacing={3} justify="center" className={customStyle.root}>
         {svgArray.map((imgsrc) => (
           <Grid item key={imgsrc.img}>

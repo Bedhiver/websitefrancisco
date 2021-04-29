@@ -1,0 +1,66 @@
+#techUsedTypo {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+/* #presentationImage {
+  margin-top: 64px;
+  width: 100%;
+}*/
+
+@media (max-width: 800px) {
+  #divImage {
+    display: none;
+  }
+  #techUsedTypo {
+    margin-top: 70px;
+    margin-bottom: 10px;
+    display: flex;
+  }
+}
+
+#divImage {
+  position: relative;
+  text-align: center;
+  height: 528px;
+  margin-top: 64px;
+  /* width:450px; */
+  /* margin:0 auto; */
+}
+
+#divImage img {
+  object-fit: cover;
+  height: 528px;
+  /* margin-top: 64px; */
+  width: 100%;
+  position: absolute;
+  left: 0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#divImage img.secondImage {
+  animation-name: fadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  animation-direction: alternate;
+}

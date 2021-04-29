@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import customStyle from "../styles/CustomStyle";
+import customLinkStyle from "../styles/CustomLinkStyle";
 import React from "react";
 
 /**
@@ -14,7 +14,7 @@ import React from "react";
  */
 export default function CustomLink({to, content}) {
   return (
-    <Link to={to} style={customStyle.linkStyle}>
+    <Link to={to} style={customLinkStyle.linkStyle}>
       {content}
     </Link>
   );

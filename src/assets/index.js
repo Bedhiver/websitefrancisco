@@ -27,4 +27,5 @@ export const svgArray = [
   },
 ];
 
-export { default as developerWallpaper } from "./developerWallpaper.png";
+export { default as developerWallpaper } from "./developerType.jpeg";
+export { default as otherWallpaper } from "./otherWallpaper.jpeg";
