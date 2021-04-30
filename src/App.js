@@ -42,6 +42,15 @@ export default function App() {
           </Router> */}
 
           <DrawerLeft onChangeTheme={onChangeTheme} language={language} />
+          {/* <Switch>
+            <Route
+              exact path="/"
+              component={() => (
+                <DrawerLeft onChangeTheme={onChangeTheme} language={language} />
+              )}
+            />
+            <Route exact path="*" component={NotFound} />
+          </Switch> */}
         </header>
       </div>
     </ThemeProvider>

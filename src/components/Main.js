@@ -1,9 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import CustomLink from "./CustomLink";
-import CustomButton from "./CustomButton";
-import NotFound from "./NotFound";
-import { Box, Button, Typography } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import Card from "./Card";
 import { Grid, Paper } from "@material-ui/core";
 import {
@@ -16,7 +12,7 @@ import MainStyle from "../styles/MainStyle";
 
 export default function Main(props) {
   const classes = props.classes;
-  const path = props.path;
+  // const path = props.path;
   const customStyle = MainStyle();
 
   return (
@@ -59,7 +55,7 @@ export default function Main(props) {
           </Grid>
         ))}
       </Grid>
-      <div className={classes.itemContent}>
+      {/* <div className={classes.itemContent}>
         <Router>
           <Switch>
             <Route exact path="/hello">
@@ -89,7 +85,7 @@ export default function Main(props) {
         >
           test link
         </Button>
-      </div>
+      </div> */}
       <div className={classes.toolbar} />
       <Typography paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

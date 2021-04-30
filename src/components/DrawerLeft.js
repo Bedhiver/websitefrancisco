@@ -22,10 +22,8 @@ import DrawerLeftStyle from "../styles/DrawerLeftStyle";
 import Main from "./Main";
 import categoriesDrawerLeft from "../utils/DrawerLeftMenu";
 import "./../styles/test.css";
-// import CustomLink from "./CustomLink";
-// import { Route, Switch } from "react-router";
-// import CustomButton from "./CustomButton";
-// import { BrowserRouter as Router } from "react-router-dom";
+import { Link, Route, Switch } from "react-router-dom";
+import Test from "./Test";
 
 export default function MiniDrawer(props) {
   const classes = DrawerLeftStyle();
@@ -107,7 +105,12 @@ export default function MiniDrawer(props) {
         />
         <List>
           {categoriesDrawerLeft.map((element) => (
-            <ListItem button key={element.categoryName}>
+            <ListItem
+              button
+              component={Link}
+              to={element.path}
+              key={element.categoryName}
+            >
               <ListItemIcon>
                 <SvgIcon component={element.icon} />
               </ListItemIcon>
@@ -117,7 +120,16 @@ export default function MiniDrawer(props) {
         </List>
         <Divider variant="middle" spacing={100} />
       </Drawer>
-      <Main classes={classes} path={path} />
+      <Switch>
+        <Route
+          exact
+          path="/"
+          component={() => <Main classes={classes} path={path} />}
+        />
+        <Route exact path="/experience" component={Test} />
+        {/* <Route path="*" component={NotFound}/> */}
+      </Switch>
+      {/* <Main classes={classes} path={path} /> */}
     </div>
   );
 }
