@@ -1,4 +1,5 @@
-.body {
-    background-color: #35489c;
-    color: #fd0000;
+.imgStyle{
+    margin: 5px;
+    border: 1px solid black;
+    filter: drop-shadow(1px 1px 4px #000000);
 }

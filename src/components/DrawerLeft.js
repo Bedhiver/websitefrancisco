@@ -15,13 +15,17 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
-import { Box } from "@material-ui/core";
+import { Box, SvgIcon } from "@material-ui/core";
 import SwitchTheme from "./SwitchTheme";
 import profilePhoto from "./../assets/photoprofil.jpg";
 import DrawerLeftStyle from "../styles/DrawerLeftStyle";
 import Main from "./Main";
+import categoriesDrawerLeft from "../utils/DrawerLeftMenu";
+import "./../styles/test.css";
+// import CustomLink from "./CustomLink";
+// import { Route, Switch } from "react-router";
+// import CustomButton from "./CustomButton";
+// import { BrowserRouter as Router } from "react-router-dom";
 
 export default function MiniDrawer(props) {
   const classes = DrawerLeftStyle();
@@ -96,31 +100,22 @@ export default function MiniDrawer(props) {
           </IconButton>
         </div>
         <img
+          className="imgStyle"
           src={profilePhoto}
-          alt={profilePhoto}
-          style={{ margin: 10, border: "1px solid #021a40" }}
+          alt=""
+          // style={{ margin: 10, border: "1px solid #021a40" }}
         />
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem button key={text}>
+          {categoriesDrawerLeft.map((element) => (
+            <ListItem button key={element.categoryName}>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                <SvgIcon component={element.icon} />
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={element.categoryName} />
             </ListItem>
           ))}
         </List>
         <Divider variant="middle" spacing={100} />
-        <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
       </Drawer>
       <Main classes={classes} path={path} />
     </div>
