@@ -3,6 +3,10 @@ import React, { useState } from "react";
 import DefaultTheme from "./themes/DefaultTheme";
 import { ThemeProvider } from "@material-ui/styles";
 import { translateTo } from "./languages/translations";
+import { Route, Switch } from "react-router";
+import NotFound from "./components/NotFound";
+import Test from "./components/Test";
+import Main from "./components/Main";
 
 export default function App() {
   const [isDark, setTheme] = useState(true);
@@ -14,10 +18,10 @@ export default function App() {
 
   const language = translateTo("french");
 
-  // const path = {
-  //   toHello: "/hello",
-  //   toHome: "/",
-  // };
+  const path = {
+    toHello: "/hello",
+    toHome: "/",
+  };
 
   return (
     <ThemeProvider
@@ -25,32 +29,23 @@ export default function App() {
     >
       <div className="App">
         <header className="App-header">
-          {/* <Router>
-            <Switch>
-              <Route exact path="/hello">
-                <CustomLink to={path.toHome} content={<CustomButton />} />
-              </Route>
-              <Route exact path="/">
-                <div>
-                  <CustomLink to={path.toHello} content={<h1>HELLO</h1>} />
-                </div>
-              </Route>
-              <Route path="*">
-                <NotFound />
-              </Route>
-            </Switch>
-          </Router> */}
-
-          <DrawerLeft onChangeTheme={onChangeTheme} language={language} />
-          {/* <Switch>
-            <Route
-              exact path="/"
-              component={() => (
-                <DrawerLeft onChangeTheme={onChangeTheme} language={language} />
-              )}
-            />
-            <Route exact path="*" component={NotFound} />
-          </Switch> */}
+          <Switch>
+            <Route exact path="/">
+              <DrawerLeft
+                onChangeTheme={onChangeTheme}
+                language={language}
+                content={<Main path={path} />}
+              />
+            </Route>
+            <Route exact path="/experience">
+              <DrawerLeft
+                onChangeTheme={onChangeTheme}
+                language={language}
+                content={<Test />}
+              />
+            </Route>
+            <Route component={NotFound} />
+          </Switch>
         </header>
       </div>
     </ThemeProvider>

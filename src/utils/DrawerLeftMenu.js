@@ -1,5 +1,4 @@
 import WorkIcon from "@material-ui/icons/Work";
-import SchoolIcon from "@material-ui/icons/School";
 import HomeIcon from "@material-ui/icons/Home";
 import FolderSpecialIcon from "@material-ui/icons/FolderSpecial";
 import SportsEsportsIcon from "@material-ui/icons/SportsEsports";
@@ -15,11 +14,6 @@ const categoriesDrawerLeft = [
     categoryName: "Expérience",
     icon: WorkIcon,
     path: "/experience",
-  },
-  {
-    categoryName: "Formation",
-    icon: SchoolIcon,
-    path: "/degree",
   },
   {
     categoryName: "Projets",

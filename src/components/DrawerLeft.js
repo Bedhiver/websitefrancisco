@@ -19,11 +19,9 @@ import { Box, SvgIcon } from "@material-ui/core";
 import SwitchTheme from "./SwitchTheme";
 import profilePhoto from "./../assets/photoprofil.jpg";
 import DrawerLeftStyle from "../styles/DrawerLeftStyle";
-import Main from "./Main";
 import categoriesDrawerLeft from "../utils/DrawerLeftMenu";
 import "./../styles/test.css";
-import { Link, Route, Switch } from "react-router-dom";
-import Test from "./Test";
+import { Link } from "react-router-dom";
 
 export default function MiniDrawer(props) {
   const classes = DrawerLeftStyle();
@@ -38,10 +36,10 @@ export default function MiniDrawer(props) {
     setOpen(false);
   };
 
-  const path = {
-    toHello: "/hello",
-    toHome: "/",
-  };
+  // const path = {
+  //   toHello: "/hello",
+  //   toHome: "/",
+  // };
 
   return (
     <div className={classes.root}>
@@ -120,16 +118,7 @@ export default function MiniDrawer(props) {
         </List>
         <Divider variant="middle" spacing={100} />
       </Drawer>
-      <Switch>
-        <Route
-          exact
-          path="/"
-          component={() => <Main classes={classes} path={path} />}
-        />
-        <Route exact path="/experience" component={Test} />
-        {/* <Route path="*" component={NotFound}/> */}
-      </Switch>
-      {/* <Main classes={classes} path={path} /> */}
+      {props.content}
     </div>
   );
 }

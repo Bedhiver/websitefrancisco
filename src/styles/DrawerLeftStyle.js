@@ -2,7 +2,7 @@ import { fade, colors, makeStyles } from "@material-ui/core";
 
 const drawerWidth = 240;
 
-const DrawerStyle = makeStyles((theme) => ({
+const DrawerLeftStyle = makeStyles((theme) => ({
   root: {
     display: "flex",
   },
@@ -76,4 +76,4 @@ const DrawerStyle = makeStyles((theme) => ({
   },
 }));
 
-export default DrawerStyle;
+export default DrawerLeftStyle;

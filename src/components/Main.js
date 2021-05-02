@@ -9,9 +9,10 @@ import {
 } from "./../assets/index";
 import "./../styles/MainStyle.css";
 import MainStyle from "../styles/MainStyle";
+import DrawerLeftStyle from "../styles/DrawerLeftStyle";
 
 export default function Main(props) {
-  const classes = props.classes;
+  const classes = DrawerLeftStyle();
   // const path = props.path;
   const customStyle = MainStyle();
 
