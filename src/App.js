@@ -7,6 +7,7 @@ import { Route, Switch } from "react-router";
 import NotFound from "./components/NotFound";
 import Test from "./components/Test";
 import Main from "./components/Main";
+import Pong from "./components/pongGame";
 
 export default function App() {
   const [isDark, setTheme] = useState(true);
@@ -43,6 +44,9 @@ export default function App() {
                 language={language}
                 content={<Test />}
               />
+            </Route>
+            <Route exact path="/games">
+              <Pong />
             </Route>
             <Route component={NotFound} />
           </Switch>
