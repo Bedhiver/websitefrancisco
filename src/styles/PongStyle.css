@@ -1,0 +1,27 @@
+#iframe-pong {
+  width: 800px;
+  height: 600px;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 0px;
+}
+
+#iframe-div {
+    display: none;
+}
+
+@media (max-width: 950px) {
+  #iframe-pong {
+    display: none;
+  }
+  #iframe-div {
+      display: initial;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+}
