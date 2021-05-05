@@ -28,7 +28,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function MediaCard({ imgSrc, title, description, website }) {
+export default function CardDashboard({ imgSrc, title, description, website }) {
   const classes = useStyles();
 
   return (

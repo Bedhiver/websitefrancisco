@@ -5,7 +5,7 @@ import { ThemeProvider } from "@material-ui/styles";
 import { translateTo } from "./languages/translations";
 import { Route, Switch } from "react-router";
 import NotFound from "./components/NotFound";
-import Test from "./components/Test";
+import Experience from "./components/Experience";
 import Main from "./components/Main";
 import Pong from "./components/Pong";
 
@@ -42,7 +42,7 @@ export default function App() {
               <DrawerLeft
                 onChangeTheme={onChangeTheme}
                 language={language}
-                content={<Test />}
+                content={<Experience />}
               />
             </Route>
             <Route exact path="/games">

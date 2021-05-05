@@ -1,12 +1,12 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
-import Card from "./Card";
+import CardDashboard from "./CardDashboard";
 import { Grid, Paper } from "@material-ui/core";
 import {
   svgArray,
   developerWallpaper,
   otherWallpaper,
-} from "./../assets/index";
+} from "../assets/assetsDashboard";
 import "./../styles/MainStyle.css";
 import MainStyle from "../styles/MainStyle";
 import DrawerLeftStyle from "../styles/DrawerLeftStyle";
@@ -46,7 +46,7 @@ export default function Main(props) {
         {svgArray.map((imgsrc) => (
           <Grid item key={imgsrc.img}>
             <Paper className={customStyle.paper}>
-              <Card
+              <CardDashboard
                 imgSrc={imgsrc.img}
                 title={imgsrc.title}
                 description={imgsrc.description}
