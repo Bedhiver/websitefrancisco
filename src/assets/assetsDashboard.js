@@ -3,7 +3,7 @@ import reactsvg from "./react-1.svg";
 import jssvg from "./logo-javascript.svg";
 // import developerType from './developerType.jpeg';
 
-export const svgArray = [
+export const imgArray = [
   {
     img: jssvg,
     title: "Javascript",

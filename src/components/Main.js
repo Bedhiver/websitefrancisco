@@ -3,7 +3,7 @@ import { Typography } from "@material-ui/core";
 import CardDashboard from "./CardDashboard";
 import { Grid, Paper } from "@material-ui/core";
 import {
-  svgArray,
+  imgArray,
   developerWallpaper,
   otherWallpaper,
 } from "../assets/assetsDashboard";
@@ -43,7 +43,7 @@ export default function Main(props) {
       <script src={foowriter} ></script> */}
 
       <Grid container spacing={3} justify="center" className={customStyle.root}>
-        {svgArray.map((imgsrc) => (
+        {imgArray.map((imgsrc) => (
           <Grid item key={imgsrc.img}>
             <Paper className={customStyle.paper}>
               <CardDashboard
