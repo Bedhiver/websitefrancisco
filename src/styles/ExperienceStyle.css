@@ -1,7 +1,17 @@
 .divExperience {
-    margin-top: 64px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 5px;
-    width: 100%;
+  margin-top: 64px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+#gridExperience {
+  width: 100%;
+  margin-top: 20px;
+  margin-left: 0px;
+}
+
+#dividerExperience {
+  width: 100%;
 }
