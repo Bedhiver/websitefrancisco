@@ -4,6 +4,7 @@ import elosiLogo from "./elosi-logo.png";
 
 export const expArray = [
   {
+    id: 1,
     img: worldlineLogo,
     title: "Développeur Java 8/Angular 8 - stagiaire",
     period: "Jan - Avr 2020",
@@ -33,6 +34,7 @@ export const expArray = [
     ],
   },
   {
+    id: 2,
     img: elosiLogo,
     title: "Développeur C# .NET Framework",
     period: "Sep 2020 - Déc 2020",
@@ -58,6 +60,7 @@ export const expArray = [
     ],
   },
   {
+    id: 3,
     img: commerceLogo,
     title: "Emplois dans le commerce",
     period: "2015 - 2019",
@@ -88,6 +91,7 @@ export const expArray = [
 
 export const degArray = [
   {
+    id: 1,
     title:
       "Ecole d'informatique - Bachelor concepteur développeur d'application",
     period: "2020 - 2021",
@@ -110,6 +114,7 @@ export const degArray = [
     ],
   },
   {
+    id: 2,
     title: "BTS NRC (Commerce)",
     period: "2015",
     content: [

@@ -30,8 +30,31 @@ export default function CardExperience({ imgSrc }) {
     };
   });
 
+  // let bar = 6;
+  // let foo = "initial";
+
+  function foofun() {
+    const lol = {
+      bar: 6,
+      foo: "initial",
+    };
+    if (imgSrc.img == null && dimensions.width < 960) {
+      lol.bar = 9;
+      lol.foo = "none";
+      console.log("none");
+      console.log(dimensions.width);
+    } else {
+      console.log("displayed");
+      console.log(dimensions.width);
+      lol.bar = 6;
+      lol.foo = "initial";
+    }
+    return lol;
+  }
+
   return (
-    <div style={{ maxWidth: "1250px" }}>
+    // <div style={{ maxWidth: "1250px" }}>
+    <div style={{ width: "100%" }}>
       <Card>
         <Grid container className={classes.grid}>
           <Grid item xs={3} className={classes.griditem}>
@@ -39,11 +62,13 @@ export default function CardExperience({ imgSrc }) {
               component="img"
               image={imgSrc.img}
               className={classes.cardmedia}
+              style={{ display: foofun().foo }}
             />
           </Grid>
           <Grid
             item
-            xs={dimensions.width < 960 ? 9 : 6}
+            xs={foofun().bar}
+            // xs={dimensions.width < 960 ? 9 : 6}
             style={{ borderRight: "1px solid #ffffff80" }}
           >
             <Typography
@@ -65,14 +90,14 @@ export default function CardExperience({ imgSrc }) {
           </Grid>
         </Grid>
         <CardContent>
-          {imgSrc.content.map((element) => (
-            <div>
+          {imgSrc.content.map((element, i) => (
+            <div key={i}>
               <br />
               <Typography variant="h5" component="h2">
                 {element.subTitle}
               </Typography>
-              {element.descriptions.map((description) => (
-                <Typography color="textSecondary" variant="h6">
+              {element.descriptions.map((description, i) => (
+                <Typography color="textSecondary" variant="h6" key={i}>
                   {description}
                 </Typography>
               ))}

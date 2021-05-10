@@ -1,4 +1,7 @@
-import { createMuiTheme, colors } from "@material-ui/core";
+import {
+  unstable_createMuiStrictModeTheme as createMuiTheme,
+  colors,
+} from "@material-ui/core";
 import React from "react";
 
 class DefaultTheme extends React.Component {
