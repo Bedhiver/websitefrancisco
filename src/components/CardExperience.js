@@ -71,31 +71,13 @@ export default function CardExperience({ imgSrc }) {
               <Typography variant="h5" component="h2">
                 {element.subTitle}
               </Typography>
-              <Typography color="textSecondary" variant="h6">
-                {element.description}
-              </Typography>
+              {element.descriptions.map((description) => (
+                <Typography color="textSecondary" variant="h6">
+                  {description}
+                </Typography>
+              ))}
             </div>
           ))}
-          {/* <Typography variant="h5" component="h2">
-            {imgSrc.subTitle2}
-          </Typography>
-          <Typography color="textSecondary" variant="h6">
-            {imgSrc.description2}
-          </Typography>
-          <br />
-          <Typography variant="h5" component="h2">
-            {imgSrc.subTitle3}
-          </Typography>
-          <Typography color="textSecondary" variant="h6">
-            {imgSrc.description3}
-          </Typography>
-          <br />
-          <Typography variant="h5" component="h2">
-            {imgSrc.subTitle4}
-          </Typography>
-          <Typography color="textSecondary" variant="h6">
-            {imgSrc.description4}
-          </Typography> */}
         </CardContent>
         <CardActions>
           <Button size="small">Learn More</Button>
