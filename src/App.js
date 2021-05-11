@@ -8,6 +8,7 @@ import NotFound from "./components/NotFound";
 import Experience from "./components/Experience";
 import Dashboard from "./components/Dashboard";
 import Pong from "./components/Pong";
+import Project from "./components/Project";
 
 export default function App() {
   const [isDark, setTheme] = useState(true);
@@ -49,7 +50,7 @@ export default function App() {
               <DrawerLeft
                 onChangeTheme={onChangeTheme}
                 language={language}
-                content={<Pong />}
+                content={<Project />}
               />
             </Route>
             <Route exact path="/games">
