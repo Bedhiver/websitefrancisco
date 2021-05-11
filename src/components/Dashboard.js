@@ -7,14 +7,14 @@ import {
   developerWallpaper,
   otherWallpaper,
 } from "../assets/assetsDashboard";
-import "./../styles/MainStyle.css";
-import MainStyle from "../styles/MainStyle";
+import "./../styles/DashboardStyle.css";
+import DashboardStyle from "../styles/DashboardStyle";
 import DrawerLeftStyle from "../styles/DrawerLeftStyle";
 
 export default function Main(props) {
   const classes = DrawerLeftStyle();
   // const path = props.path;
-  const customStyle = MainStyle();
+  const customStyle = DashboardStyle();
 
   return (
     <main className={classes.content}>
