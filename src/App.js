@@ -6,7 +6,7 @@ import { translateTo } from "./languages/translations";
 import { Route, Switch } from "react-router";
 import NotFound from "./components/NotFound";
 import Experience from "./components/Experience";
-import Main from "./components/Main";
+import Dashboard from "./components/Dashboard";
 import Pong from "./components/Pong";
 
 export default function App() {
@@ -35,7 +35,7 @@ export default function App() {
               <DrawerLeft
                 onChangeTheme={onChangeTheme}
                 language={language}
-                content={<Main path={path} />}
+                content={<Dashboard path={path} />}
               />
             </Route>
             <Route exact path="/experience">
@@ -43,6 +43,13 @@ export default function App() {
                 onChangeTheme={onChangeTheme}
                 language={language}
                 content={<Experience />}
+              />
+            </Route>
+            <Route exact path="/projects">
+              <DrawerLeft
+                onChangeTheme={onChangeTheme}
+                language={language}
+                content={<Pong />}
               />
             </Route>
             <Route exact path="/games">
