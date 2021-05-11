@@ -30,26 +30,19 @@ export default function CardExperience({ imgSrc }) {
     };
   });
 
-  // let bar = 6;
-  // let foo = "initial";
-
-  function foofun() {
-    const lol = {
-      bar: 6,
-      foo: "initial",
+  function isImageOrSmall() {
+    const param = {
+      xs: 6,
+      display: "block",
     };
-    if (imgSrc.img == null && dimensions.width < 960) {
-      lol.bar = 9;
-      lol.foo = "none";
-      console.log("none");
-      console.log(dimensions.width);
+    if (imgSrc.img == null || dimensions.width < 960) {
+      param.xs = 9;
+      param.display = "none";
     } else {
-      console.log("displayed");
-      console.log(dimensions.width);
-      lol.bar = 6;
-      lol.foo = "initial";
+      param.xs = 6;
+      param.display = "block";
     }
-    return lol;
+    return param;
   }
 
   return (
@@ -57,17 +50,18 @@ export default function CardExperience({ imgSrc }) {
     <div style={{ width: "100%" }}>
       <Card>
         <Grid container className={classes.grid}>
-          <Grid item xs={3} className={classes.griditem}>
+          {/* <Grid item xs={3} className={classes.griditem}> */}
+          <Grid item xs={3} style={{ display: isImageOrSmall().display }}>
             <CardMedia
               component="img"
               image={imgSrc.img}
               className={classes.cardmedia}
-              style={{ display: foofun().foo }}
+              style={{ display: isImageOrSmall().display }}
             />
           </Grid>
           <Grid
             item
-            xs={foofun().bar}
+            xs={isImageOrSmall().xs}
             // xs={dimensions.width < 960 ? 9 : 6}
             style={{ borderRight: "1px solid #ffffff80" }}
           >
