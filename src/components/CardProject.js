@@ -1,8 +1,8 @@
 import {
   Card,
-  CardActionArea,
   CardContent,
   CardMedia,
+  Divider,
   Grid,
   Typography,
 } from "@material-ui/core";
@@ -47,43 +47,43 @@ export default function CardProject({ imgSrc, title, content }) {
 
   return (
     <Card id="cardProject">
-      <CardActionArea>
-        <Grid container>
-          <Grid item xs={isImageOrSmall().xs} id="firstGridItem">
-            <CardContent id="cardContentProject">
-              <Typography variant="h5" component="h2">
-                {title}
-              </Typography>
-              {content.map((element, id) => (
-                <div key={id}>
-                  <br />
-                  <Typography variant="h5" component="h2">
-                    {element.subTitle}
-                  </Typography>
-                  <Typography variant="h6" color="textSecondary" component="p">
-                    {element.description}
-                  </Typography>
-                </div>
-              ))}
-            </CardContent>
-          </Grid>
-          <Grid
-            item
-            xs={6}
-            id="secondGridItem"
-            style={{ display: isImageOrSmall().display }}
-          >
-            <div id="divStyle">
-              <CardMedia
-                component="img"
-                id="cardMediaProject"
-                image={imgSrc}
-                title={title}
-              />
-            </div>
-          </Grid>
+      <Grid container>
+        <Grid item xs={isImageOrSmall().xs} id="firstGridItem">
+          <CardContent id="cardContentProject">
+            <Typography variant="h5" component="h2">
+              {title}
+            </Typography>
+            {content.map((element, id) => (
+              <div key={id}>
+                <br />
+                <Typography variant="h5" component="h2">
+                  {element.subTitle}
+                </Typography>
+                <Divider />
+                <br />
+                <Typography variant="h6" color="textSecondary">
+                  {element.description}
+                </Typography>
+              </div>
+            ))}
+          </CardContent>
         </Grid>
-      </CardActionArea>
+        <Grid
+          item
+          xs={6}
+          id="secondGridItem"
+          style={{ display: isImageOrSmall().display }}
+        >
+          <div id="divStyle">
+            <CardMedia
+              component="img"
+              id="cardMediaProject"
+              image={imgSrc}
+              title={title}
+            />
+          </div>
+        </Grid>
+      </Grid>
     </Card>
   );
 }
