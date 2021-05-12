@@ -1,0 +1,33 @@
+#cardProject {
+  /* padding: 50px; */
+  /* position: fixed; */
+  /* display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px; */
+}
+
+#cardMediaProject {
+}
+
+#cardContentProject {
+}
+
+#divStyle {
+}
+
+#secondGridItem {
+  padding: 20px;
+}
+
+/* @media (max-width: 960px) {
+    #secondGridItem {
+        display: none;
+      }
+} */
+
+#firstGridItem {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}

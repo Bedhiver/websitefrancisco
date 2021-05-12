@@ -9,9 +9,6 @@ import Typography from "@material-ui/core/Typography";
 const useStyles = makeStyles({
   root: {
     maxWidth: "100%",
-    // height: 500,
-    // width: "auto",
-    // margin: 15,
   },
   media: {
     objectFit: "fill",
@@ -39,13 +36,7 @@ export default function CardDashboard({ imgSrc, title, description, website }) {
       href={website}
     >
       <Card className={classes.root}>
-        {/* <Router> */}
-        {/* <CardActionArea component={Link} to="https://fr.reactjs.org/"> */}
-
         <CardActionArea>
-          {/* <Switch> */}
-          {/* <Route path="https://fr.reactjs.org/"> */}
-          {/* <Link href="https://fr.reactjs.org/"> */}
           <div className={classes.divStyle}>
             <CardMedia
               component="img"
@@ -59,24 +50,10 @@ export default function CardDashboard({ imgSrc, title, description, website }) {
               {title}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              {/* Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica */}
               {description}
             </Typography>
           </CardContent>
-          {/* </Link> */}
-          {/* </Route> */}
-          {/* </Switch> */}
         </CardActionArea>
-        {/* </Router> */}
-        {/* <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions> */}
       </Card>
     </a>
   );
