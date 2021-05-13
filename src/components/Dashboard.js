@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
+import { Typography, useTheme } from "@material-ui/core";
 import CardDashboard from "./CardDashboard";
 import { Grid, Paper } from "@material-ui/core";
 import {
@@ -26,6 +26,20 @@ export default function Main(props) {
             Développeur d'application
           </Typography>
         </Paper>
+      </div>
+
+      <div
+        style={{
+          border: `solid 2px ${useTheme().palette.secondary.dark}`,
+          margin: 10,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <h1>Ce site web est en construction</h1>
+        <h1>Soyez indulgent 😉</h1>
       </div>
 
       <Typography id="techUsedTypo" variant="h5">

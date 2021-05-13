@@ -9,6 +9,7 @@ import Experience from "./components/Experience";
 import Dashboard from "./components/Dashboard";
 import Pong from "./components/Pong";
 import Project from "./components/Project";
+import Contact from "./components/Contact";
 
 export default function App() {
   const [isDark, setTheme] = useState(true);
@@ -58,6 +59,13 @@ export default function App() {
                 onChangeTheme={onChangeTheme}
                 language={language}
                 content={<Pong />}
+              />
+            </Route>
+            <Route exact path="/contact">
+              <DrawerLeft
+                onChangeTheme={onChangeTheme}
+                language={language}
+                content={<Contact />}
               />
             </Route>
             <Route component={NotFound} />
