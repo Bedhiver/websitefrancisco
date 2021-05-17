@@ -3,20 +3,15 @@
   display: flex;
 }
 
-/* #presentationImage {
-  margin-top: 64px;
-  width: 100%;
-}*/
-
 @media (max-width: 800px) {
   #divImage {
     display: none;
   }
-  #techUsedTypo {
+  /* #techUsedTypo {
     margin-top: 70px;
     margin-bottom: 10px;
     display: flex;
-  }
+  } */
 }
 
 #divImage {
@@ -24,14 +19,11 @@
   text-align: center;
   height: 528px;
   margin-top: 64px;
-  /* width:450px; */
-  /* margin:0 auto; */
 }
 
 #divImage img {
   object-fit: cover;
   height: 528px;
-  /* margin-top: 64px; */
   width: 100%;
   position: absolute;
   left: 0;

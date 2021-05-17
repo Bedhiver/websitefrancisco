@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, useTheme } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import CardDashboard from "./CardDashboard";
 import { Grid, Paper } from "@material-ui/core";
 import {
@@ -13,7 +13,6 @@ import DrawerLeftStyle from "../styles/DrawerLeftStyle";
 
 export default function Main(props) {
   const classes = DrawerLeftStyle();
-  // const path = props.path;
   const customStyle = DashboardStyle();
 
   return (
@@ -28,16 +27,7 @@ export default function Main(props) {
         </Paper>
       </div>
 
-      <div
-        style={{
-          border: `solid 2px ${useTheme().palette.secondary.dark}`,
-          margin: 10,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
+      <div className={customStyle.constructionDiv}>
         <h1>Ce site web est en construction</h1>
         <h1>Soyez indulgent 😉</h1>
       </div>
@@ -70,37 +60,6 @@ export default function Main(props) {
           </Grid>
         ))}
       </Grid>
-      {/* <div className={classes.itemContent}>
-        <Router>
-          <Switch>
-            <Route exact path="/hello">
-              <CustomLink to={path.toHome} content={<CustomButton />} />
-            </Route>
-            <Route exact path="/">
-              <CustomLink
-                to={path.toHello}
-                content={
-                  <Box color="text.primary">
-                    <Typography variant="h5">HELLO</Typography>
-                  </Box>
-                }
-              />
-            </Route>
-            <Route path="*">
-              <NotFound />
-            </Route>
-          </Switch>
-        </Router>
-        <Button
-          variant="contained"
-          color="primary"
-          target="_blank"
-          rel="noreferrer"
-          href="https://fr.reactjs.org/"
-        >
-          test link
-        </Button>
-      </div> */}
       <div className={classes.toolbar} />
       <Typography paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
