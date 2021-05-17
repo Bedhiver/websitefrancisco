@@ -6,3 +6,9 @@
   /* filter: drop-shadow(1px 1px 4px #000000); */
   /* overflow-x: hidden; */
 }
+
+#divGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}

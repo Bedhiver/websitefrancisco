@@ -1,15 +1,18 @@
 import { useTheme } from "@material-ui/core";
 import React from "react";
 
-export default function CustomExternalUrl({ wordLinked, url }) {
+export default function CustomExternalUrl({ link, isDecoration }) {
+
+  let foo = isDecoration ? "" : "none"
+
   return (
     <a
-      style={{ color: useTheme().palette.text.primary }}
+      style={{ color: useTheme().palette.text.primary, textDecoration: foo }}
       target="_blank"
       rel="noreferrer"
-      href={url}
+      href={link.url}
     >
-      {wordLinked}
+      {link.wordLinked}
     </a>
   );
 }

@@ -13,14 +13,17 @@
 
 #cardContentProject {
   display: flex;
-}
-
-#divStyle {
-  display: flex;
 } */
 
+#imgCentered {
+  width: 700px;
+}
+
 #secondGridItem {
+  width: 100px;
   padding: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 /* @media (max-width: 960px) {

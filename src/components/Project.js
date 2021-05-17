@@ -11,12 +11,15 @@ export default function Project() {
       <Divider id="dividerProject" />
       <div className="divContainer">
         {imgArray.map((element, id) => (
-          <CardProject
-            key={id}
-            imgSrc={element.img}
-            title={element.title}
-            content={element.content}
-          />
+          <div key={id}>
+            <br />
+            <CardProject
+              imgSrc={element.img}
+              title={element.title}
+              content={element.content}
+              githubUrl={element.github}
+            />
+          </div>
         ))}
       </div>
     </div>

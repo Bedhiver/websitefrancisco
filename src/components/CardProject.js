@@ -1,15 +1,19 @@
+import React, { useEffect, useState } from "react";
 import {
+  Button,
   Card,
+  CardActions,
   CardContent,
   CardMedia,
   Divider,
   Grid,
   Typography,
 } from "@material-ui/core";
+import CustomExternalUrl from "./CustomExternalUrl";
+import GitHubIcon from "@material-ui/icons/GitHub";
 import "./../styles/CardProjectStyle.css";
-import React, { useEffect, useState } from "react";
 
-export default function CardProject({ imgSrc, title, content }) {
+export default function CardProject({ imgSrc, title, content, githubUrl }) {
   const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
     width: window.innerWidth,
@@ -33,14 +37,14 @@ export default function CardProject({ imgSrc, title, content }) {
   function isImageOrSmall() {
     const param = {
       xs: 6,
-      display: "block",
+      display: "flex",
     };
     if (imgSrc == null || dimensions.width < 960) {
       param.xs = 12;
       param.display = "none";
     } else {
       param.xs = 6;
-      param.display = "block";
+      param.display = "flex";
     }
     return param;
   }
@@ -74,7 +78,7 @@ export default function CardProject({ imgSrc, title, content }) {
           id="secondGridItem"
           style={{ display: isImageOrSmall().display }}
         >
-          <div id="divStyle">
+          <div id="imgCentered">
             <CardMedia
               component="img"
               id="cardMediaProject"
@@ -84,6 +88,17 @@ export default function CardProject({ imgSrc, title, content }) {
           </div>
         </Grid>
       </Grid>
+      <CardActions>
+        <Button size="small" startIcon={<GitHubIcon />}>
+          <CustomExternalUrl
+            link={{
+              wordLinked: "GitHub",
+              url: githubUrl,
+            }}
+            isDecoration={false}
+          />
+        </Button>
+      </CardActions>
     </Card>
   );
 }
