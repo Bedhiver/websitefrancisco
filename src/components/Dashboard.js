@@ -1,15 +1,17 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
-import CardDashboard from "./CardDashboard";
+import { Divider, Typography } from "@material-ui/core";
+import CardDashboardWebsite from "./CardDashboardWebsite";
 import { Grid, Paper } from "@material-ui/core";
 import {
   imgArray,
   developerWallpaper,
   otherWallpaper,
+  imgTechUsedArray,
 } from "../assets/assetsDashboard";
 import "./../styles/DashboardStyle.css";
 import DashboardStyle from "../styles/DashboardStyle";
 import DrawerLeftStyle from "../styles/DrawerLeftStyle";
+import CardDashboardTechnology from "./CardDashboardTechnology";
 
 export default function Main(props) {
   const classes = DrawerLeftStyle();
@@ -50,7 +52,7 @@ export default function Main(props) {
         {imgArray.map((imgsrc) => (
           <Grid item key={imgsrc.img}>
             <Paper className={customStyle.paper}>
-              <CardDashboard
+              <CardDashboardWebsite
                 imgSrc={imgsrc.img}
                 title={imgsrc.title}
                 description={imgsrc.description}
@@ -61,33 +63,88 @@ export default function Main(props) {
         ))}
       </Grid>
       <div className={classes.toolbar} />
-      <Typography paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus
-        non enim praesent elementum facilisis leo vel. Risus at ultrices mi
-        tempus imperdiet. Semper risus in hendrerit gravida rutrum quisque non
-        tellus. Convallis convallis tellus id interdum velit laoreet id donec
-        ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl
-        suscipit adipiscing bibendum est ultricies integer quis. Cursus euismod
-        quis viverra nibh cras. Metus vulputate eu scelerisque felis imperdiet
-        proin fermentum leo. Mauris commodo quis imperdiet massa tincidunt. Cras
-        tincidunt lobortis feugiat vivamus at augue. At augue eget arcu dictum
-        varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt.
-        Lorem donec massa sapien faucibus et molestie ac.
-      </Typography>
-      <Typography paragraph>
-        Consequat mauris nunc congue nisi vitae suscipit. Fringilla est
-        ullamcorper eget nulla facilisi etiam dignissim diam. Pulvinar elementum
-        integer enim neque volutpat ac tincidunt. Ornare suspendisse sed nisi
-        lacus sed viverra tellus. Purus sit amet volutpat consequat mauris.
-        Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus sed
-        vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra
-        accumsan in. In hendrerit gravida rutrum quisque non tellus orci ac.
-        Pellentesque nec nam aliquam sem et tortor. Habitant morbi tristique
-        senectus et. Adipiscing elit duis tristique sollicitudin nibh sit.
-        Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra
-        maecenas accumsan lacus vel facilisis. Nulla posuere sollicitudin
-        aliquam ultrices sagittis orci a.
+      <div style={{ margin: "10px" }}>
+        <h1>Technologies maitrisées ou approchées</h1>
+        <Divider variant="middle" />
+      </div>
+      <div
+        style={{
+          margin: "10px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Grid container>
+          <Grid container>
+            <h2>Langage</h2>
+          </Grid>
+          <Grid container spacing={1} style={{ width: "100%" }}>
+            {imgTechUsedArray.language.map((element, id) => (
+              <Grid item key={id}>
+                <CardDashboardTechnology
+                  imgSrc={element.img}
+                  title={element.title}
+                />
+              </Grid>
+            ))}
+          </Grid>
+          <Grid container>
+            <h2>Back-end</h2>
+          </Grid>
+          <Grid container spacing={1} style={{ width: "100%" }}>
+            {imgTechUsedArray.back.map((element, id) => (
+              <Grid item key={id}>
+                <CardDashboardTechnology
+                  imgSrc={element.img}
+                  title={element.title}
+                />
+              </Grid>
+            ))}
+          </Grid>
+          <Grid container>
+            <h2>Front-end</h2>
+          </Grid>
+          <Grid container spacing={1} style={{ width: "100%" }}>
+            {imgTechUsedArray.front.map((element, id) => (
+              <Grid item key={id}>
+                <CardDashboardTechnology
+                  imgSrc={element.img}
+                  title={element.title}
+                />
+              </Grid>
+            ))}
+          </Grid>
+          <Grid container>
+            <h2>Base de données</h2>
+          </Grid>
+          <Grid container spacing={1} style={{ width: "100%" }}>
+            {imgTechUsedArray.database.map((element, id) => (
+              <Grid item key={id}>
+                <CardDashboardTechnology
+                  imgSrc={element.img}
+                  title={element.title}
+                />
+              </Grid>
+            ))}
+          </Grid>
+          <Grid container>
+            <h2>Autre</h2>
+          </Grid>
+          <Grid container spacing={1} style={{ width: "100%" }}>
+            {imgTechUsedArray.other.map((element, id) => (
+              <Grid item key={id}>
+                <CardDashboardTechnology
+                  imgSrc={element.img}
+                  title={element.title}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </Grid>
+      </div>
+      <Typography paragraph style={{ margin: "20px" }}>
+        Node.js
       </Typography>
     </main>
   );
