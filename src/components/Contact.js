@@ -29,7 +29,14 @@ export default function Contact() {
           <li>francisco59553@gmail.com</li>
           <li>06.58.70.43.27</li>
           <br />
-          <li>https://www.linkedin.com/in/francisco-fernandez-57990a104/</li>
+          <a
+            style={{ color: useTheme().palette.text.primary }}
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.linkedin.com/in/francisco-fernandez-57990a104/"
+          >
+            <li>https://www.linkedin.com/in/francisco-fernandez-57990a104/</li>
+          </a>
         </ul>
       </div>
     </div>
