@@ -62,6 +62,17 @@ const MainStyle = makeStyles((theme) => ({
     left: "50%",
     transform: "translate(-50%, -50%)",
   },
+  paperTechLearnt: {
+    width: "100%",
+    padding: "30px",
+    margin: "10px",
+  },
+  divContainerTechLearnt: {
+    margin: "10px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
 }));
 
 export default MainStyle;

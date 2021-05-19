@@ -35,7 +35,7 @@ export default function Main(props) {
       </div>
 
       <Typography id="techUsedTypo" variant="h5">
-        Technologies utilisées pour réaliser ce siteweb :
+        Technologies utilisées pour réaliser ce site web :
       </Typography>
       {/* <h1>
         <span
@@ -67,85 +67,110 @@ export default function Main(props) {
         <h1>Technologies maitrisées ou approchées</h1>
         <Divider variant="middle" />
       </div>
-      <div
-        style={{
-          margin: "10px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
+      <div className={customStyle.divContainerTechLearnt}>
         <Grid container>
-          <Grid container>
-            <h2>Langage</h2>
-          </Grid>
-          <Grid container spacing={1} style={{ width: "100%" }}>
-            {imgTechUsedArray.language.map((element, id) => (
-              <Grid item key={id}>
-                <CardDashboardTechnology
-                  imgSrc={element.img}
-                  title={element.title}
-                />
-              </Grid>
-            ))}
-          </Grid>
-          <Grid container>
-            <h2>Back-end</h2>
-          </Grid>
-          <Grid container spacing={1} style={{ width: "100%" }}>
-            {imgTechUsedArray.back.map((element, id) => (
-              <Grid item key={id}>
-                <CardDashboardTechnology
-                  imgSrc={element.img}
-                  title={element.title}
-                />
-              </Grid>
-            ))}
-          </Grid>
-          <Grid container>
-            <h2>Front-end</h2>
-          </Grid>
-          <Grid container spacing={1} style={{ width: "100%" }}>
-            {imgTechUsedArray.front.map((element, id) => (
-              <Grid item key={id}>
-                <CardDashboardTechnology
-                  imgSrc={element.img}
-                  title={element.title}
-                />
-              </Grid>
-            ))}
-          </Grid>
-          <Grid container>
-            <h2>Base de données</h2>
-          </Grid>
-          <Grid container spacing={1} style={{ width: "100%" }}>
-            {imgTechUsedArray.database.map((element, id) => (
-              <Grid item key={id}>
-                <CardDashboardTechnology
-                  imgSrc={element.img}
-                  title={element.title}
-                />
-              </Grid>
-            ))}
-          </Grid>
-          <Grid container>
-            <h2>Autre</h2>
-          </Grid>
-          <Grid container spacing={1} style={{ width: "100%" }}>
-            {imgTechUsedArray.other.map((element, id) => (
-              <Grid item key={id}>
-                <CardDashboardTechnology
-                  imgSrc={element.img}
-                  title={element.title}
-                />
-              </Grid>
-            ))}
-          </Grid>
+          <Paper className={customStyle.paperTechLearnt}>
+            <Grid container justify="center">
+              <h2>Langage</h2>
+            </Grid>
+            <Grid
+              container
+              spacing={1}
+              justify="center"
+              className={customStyle.root}
+            >
+              {imgTechUsedArray.language.map((element, id) => (
+                <Grid item key={id}>
+                  <CardDashboardTechnology
+                    imgSrc={element.img}
+                    title={element.title}
+                  />
+                </Grid>
+              ))}
+            </Grid>
+          </Paper>
+          <Paper className={customStyle.paperTechLearnt}>
+            <Grid container justify="center">
+              <h2>Back-end</h2>
+            </Grid>
+            <Grid
+              container
+              spacing={1}
+              justify="center"
+              className={customStyle.root}
+            >
+              {imgTechUsedArray.back.map((element, id) => (
+                <Grid item key={id}>
+                  <CardDashboardTechnology
+                    imgSrc={element.img}
+                    title={element.title}
+                  />
+                </Grid>
+              ))}
+            </Grid>
+          </Paper>
+          <Paper className={customStyle.paperTechLearnt}>
+            <Grid container justify="center">
+              <h2>Front-end</h2>
+            </Grid>
+            <Grid
+              container
+              spacing={1}
+              justify="center"
+              className={customStyle.root}
+            >
+              {imgTechUsedArray.front.map((element, id) => (
+                <Grid item key={id}>
+                  <CardDashboardTechnology
+                    imgSrc={element.img}
+                    title={element.title}
+                  />
+                </Grid>
+              ))}
+            </Grid>
+          </Paper>
+          <Paper className={customStyle.paperTechLearnt}>
+            <Grid container justify="center">
+              <h2>Base de données</h2>
+            </Grid>
+            <Grid
+              container
+              spacing={1}
+              justify="center"
+              className={customStyle.root}
+            >
+              {imgTechUsedArray.database.map((element, id) => (
+                <Grid item key={id}>
+                  <CardDashboardTechnology
+                    imgSrc={element.img}
+                    title={element.title}
+                  />
+                </Grid>
+              ))}
+            </Grid>
+          </Paper>
+          <Paper className={customStyle.paperTechLearnt}>
+            <Grid container justify="center">
+              <h2>Autre</h2>
+            </Grid>
+            <Grid
+              container
+              spacing={1}
+              justify="center"
+              className={customStyle.root}
+            >
+              {imgTechUsedArray.other.map((element, id) => (
+                <Grid item key={id}>
+                  <CardDashboardTechnology
+                    imgSrc={element.img}
+                    title={element.title}
+                  />
+                </Grid>
+              ))}
+            </Grid>
+          </Paper>
         </Grid>
       </div>
-      <Typography paragraph style={{ margin: "20px" }}>
-        Node.js
-      </Typography>
     </main>
   );
 }
