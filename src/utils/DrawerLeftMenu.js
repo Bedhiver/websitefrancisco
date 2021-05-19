@@ -1,7 +1,7 @@
 import WorkIcon from "@material-ui/icons/Work";
 import HomeIcon from "@material-ui/icons/Home";
-import FolderSpecialIcon from "@material-ui/icons/FolderSpecial";
 import SportsEsportsIcon from "@material-ui/icons/SportsEsports";
+import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
 import PhoneIcon from "@material-ui/icons/Phone";
 
 const categoriesDrawerLeft = [
@@ -17,7 +17,7 @@ const categoriesDrawerLeft = [
   },
   {
     categoryName: "Projets",
-    icon: FolderSpecialIcon,
+    icon: EmojiObjectsIcon,
     path: "/projects",
   },
   {

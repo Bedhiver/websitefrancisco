@@ -1,34 +1,36 @@
+#divMain {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spanPong {
+  font-size: 30px;
+}
+
 #iframe-pong {
   width: 800px;
   height: 600px;
-  overflow: hidden;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   border: 0px;
 }
 
 #iframe-div {
-    display: none;
+  display: none;
 }
 
 @media (max-width: 950px) {
-  #iframe-pong {
+  #div-controls-and-iframe {
     display: none;
   }
   #iframe-div {
-      /* display: initial;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%); */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 80vh;
-      margin: 10px;
-      padding: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    margin: 10px;
+    padding: 10%;
   }
 }
