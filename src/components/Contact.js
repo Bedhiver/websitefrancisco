@@ -9,35 +9,37 @@ export default function Contact() {
     message: "",
   });
 
-  function onUpdate(e) {
+  function handleUpdate(e) {
     setContactForm({
       ...contactForm,
       [e.target.name]: e.target.value,
     });
-    // console.log(contactForm);
   }
 
-  function submitEmail(e) {
-    e.preventDefault();
-    axios({
-      method: "POST",
-      url: "http://localhost:8080/send",
-      data: contactForm,
-    }).then((response) => {
-      if (response.data.status === "success") {
-        console.log("ca marche");
-        alert("Message Sent.");
-        resetForm(e);
-      } else if (response.data.status === "fail") {
-        alert("Message failed to send.");
-        console.log("ca marche pas");
-      }
+  function onSubmitEmail(e) {
+    try {
+      e.preventDefault();
+
+      axios.post("http://localhost:8080/send", contactForm).then((res) => {
+        if (res.status === 200) {
+          alert("Message envoyé");
+          console.log(res);
+        } else if (res.status === 500) {
+          alert("Echec de l'envoi");
+        }
+      });
+
+      resetForm();
+    } catch (err) {}
+  }
+
+  function resetForm() {
+    let resetContactForm = {};
+    Object.keys(contactForm).forEach((key) => {
+      resetContactForm[key] = "";
     });
-  }
 
-  function resetForm(e) {
-    e.target.reset();
-    console.log("reset ", e);
+    setContactForm(resetContactForm);
   }
 
   return (
@@ -52,7 +54,11 @@ export default function Contact() {
                 please do not hesitate to give us your feedback. Thank you.
               </p>
               <hr />
-              <form id="contact-form" onSubmit={submitEmail.bind(this)} method="POST">
+              <form
+                id="contact-form"
+                onSubmit={onSubmitEmail.bind(this)}
+                // method="POST"
+              >
                 <div className="form-group">
                   <div className="row">
                     <div className="col-md-6">
@@ -64,7 +70,7 @@ export default function Contact() {
                         className="form-control"
                         required
                         value={contactForm.name}
-                        onChange={onUpdate}
+                        onChange={handleUpdate}
                       />
                     </div>
                     <div className="col-md-6">
@@ -77,7 +83,7 @@ export default function Contact() {
                         aria-describedby="emailHelp"
                         required
                         value={contactForm.email}
-                        onChange={onUpdate}
+                        onChange={handleUpdate}
                       />
                     </div>
                   </div>
@@ -91,7 +97,7 @@ export default function Contact() {
                     className="form-control"
                     required
                     value={contactForm.subject}
-                    onChange={onUpdate}
+                    onChange={handleUpdate}
                   />
                 </div>
                 <div className="form-group">
@@ -103,7 +109,7 @@ export default function Contact() {
                     rows="1"
                     required
                     value={contactForm.message}
-                    onChange={onUpdate}
+                    onChange={handleUpdate}
                   />
                 </div>
                 <button type="submit" className="primary-btn submit">
