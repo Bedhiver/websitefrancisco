@@ -1,0 +1,49 @@
+.div-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+
+.div-form {
+  max-width: 980px;
+}
+
+.div-other-channel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gridItem {
+  width: 300px;
+}
+
+.textField {
+  width: 100%;
+}
+
+.textArea {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .gridItem {
+    width: 100%;
+  }
+}
+
+.divContact {
+  margin-top: 64px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.dividerContact {
+  width: 100%;
+}
