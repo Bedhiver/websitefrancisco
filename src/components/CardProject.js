@@ -65,9 +65,9 @@ export default function CardProject({ imgSrc, title, content, githubUrl }) {
                 </Typography>
                 <Divider />
                 <br />
-                <Typography variant="h6" color="textSecondary">
+                {/* <Typography variant="h6" color="textSecondary"> */}
                   {element.description}
-                </Typography>
+                {/* </Typography> */}
               </div>
             ))}
           </CardContent>

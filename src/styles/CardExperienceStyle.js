@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core";
 const CardExperienceStyle = makeStyles((theme) => ({
   typoTitle: {
     fontSize: "2.125rem",
-    "@media (max-width: 960px)": {
+    "@media (max-width: 1000px)": {
       fontSize: "1.5rem",
     },
     position: "relative",
@@ -24,7 +24,7 @@ const CardExperienceStyle = makeStyles((theme) => ({
     minWidth: "215px",
   },
   griditem: {
-    "@media (max-width: 960px)": {
+    "@media (max-width: 1000px)": {
       display: "none",
     },
   },

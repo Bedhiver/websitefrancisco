@@ -21,7 +21,7 @@ const categoriesDrawerLeft = [
     path: "/projects",
   },
   {
-    categoryName: "Jeu",
+    categoryName: "Ping Pong",
     icon: SportsEsportsIcon,
     path: "/games",
   },

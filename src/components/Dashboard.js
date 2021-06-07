@@ -1,6 +1,7 @@
 import React from "react";
 import { Divider, Typography } from "@material-ui/core";
 import CardDashboardWebsite from "./CardDashboardWebsite";
+import CardDashboardTechnology from "./CardDashboardTechnology";
 import { Grid, Paper } from "@material-ui/core";
 import {
   imgArray,
@@ -11,9 +12,8 @@ import {
 import "./../styles/DashboardStyle.css";
 import DashboardStyle from "../styles/DashboardStyle";
 import DrawerLeftStyle from "../styles/DrawerLeftStyle";
-import CardDashboardTechnology from "./CardDashboardTechnology";
 
-export default function Main(props) {
+export default function Main() {
   const classes = DrawerLeftStyle();
   const customStyle = DashboardStyle();
 

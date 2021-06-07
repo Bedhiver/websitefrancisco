@@ -21,11 +21,6 @@ export default function App() {
 
   const language = translateTo("french");
 
-  const path = {
-    toHello: "/hello",
-    toHome: "/",
-  };
-
   return (
     <ThemeProvider
       theme={isDark ? defaultTheme.darkTheme : defaultTheme.lightTheme}
@@ -37,7 +32,7 @@ export default function App() {
               <DrawerLeft
                 onChangeTheme={onChangeTheme}
                 language={language}
-                content={<Dashboard path={path} />}
+                content={<Dashboard />}
               />
             </Route>
             <Route exact path="/experience">

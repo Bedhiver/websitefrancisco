@@ -13,8 +13,8 @@ export default function Pong() {
         <h2>Controles clavier :</h2>
         <p>Joueur 1 : Z et S</p>
         <p>
-          Joueur 2 : <span class="spanPong">&#8593;</span>
-          et <span class="spanPong">&#8595;</span>
+          Joueur 2 : <span className="spanPong">&#8593;</span>
+          et <span className="spanPong">&#8595;</span>
         </p>
         <iframe
           id="iframe-pong"

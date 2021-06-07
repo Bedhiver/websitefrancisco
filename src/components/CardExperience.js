@@ -33,7 +33,7 @@ export default function CardExperience({ imgSrc }) {
       xs: 6,
       display: "block",
     };
-    if (imgSrc.img == null || dimensions.width < 960) {
+    if (imgSrc.img == null || dimensions.width < 1000) {
       param.xs = 9;
       param.display = "none";
     } else {
@@ -44,11 +44,9 @@ export default function CardExperience({ imgSrc }) {
   }
 
   return (
-    // <div style={{ maxWidth: "1250px" }}>
     <div style={{ width: "100%" }}>
       <Card>
         <Grid container className={classes.grid}>
-          {/* <Grid item xs={3} className={classes.griditem}> */}
           <Grid item xs={3} style={{ display: isImageOrSmall().display }}>
             <CardMedia
               component="img"
@@ -89,7 +87,7 @@ export default function CardExperience({ imgSrc }) {
                 {element.subTitle}
               </Typography>
               {element.descriptions.map((description, i) => (
-                <Typography color="textSecondary" variant="h6" key={i}>
+                <Typography color="textSecondary" key={i}>
                   {description}
                 </Typography>
               ))}

@@ -106,7 +106,7 @@ export const imgTechUsedArray = {
   other: [
     {
       img: logoDocker,
-      title: "docker",
+      title: "Docker",
     },
     {
       img: logoElectron,

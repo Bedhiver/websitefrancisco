@@ -1,4 +1,4 @@
-import { Button } from "@material-ui/core";
+import { Button, Typography } from "@material-ui/core";
 import CustomExternalUrl from "../components/CustomExternalUrl";
 import pongScreen from "./pongScreen.png";
 import "./../styles/test.css";
@@ -37,7 +37,7 @@ const links = [
     url: "https://www.mongodb.com/fr-fr",
   },
   {
-    wordLinked: "docker",
+    wordLinked: "Docker",
     url: "https://www.docker.com/",
   },
 ];
@@ -56,11 +56,11 @@ export const imgArray = [
       {
         subTitle: "",
         description: (
-          <div>
-            J'ai décidé de créer un petit jeu de ping pong afin d'explorer plus
+          <Typography color="textSecondary">
+            J'ai créé un jeu de ping pong jouable à deux joueurs sur le même clavier afin d'explorer plus
             en détails les possibilités de JavaScript. C'est un jeu Desktop
             téléchargeable sur les trois plateformes : macOS, Linux et Windows.
-            Pour le réaliser j'ai utlisé deux frameworks. Pour faire un jeu j'ai
+            Pour le réaliser j'ai utlisé deux frameworks. Pour faire ce jeu j'ai
             donc eu besoin d'un moteur de jeu,{" "}
             {
               <CustomExternalUrl // Phaser 3
@@ -77,7 +77,7 @@ export const imgArray = [
               />
             }
             .
-          </div>
+          </Typography>
         ),
       },
       {
@@ -88,14 +88,14 @@ export const imgArray = [
       {
         subTitle: "Téléchargements",
         description: (
-          <div
+          <Typography
             style={{
               display: "flex",
               flexWrap: "wrap",
               gap: "10px",
             }}
           >
-            Je mets donc les trois liens permettant de télécharger le jeu en
+            Voici les liens permettant de télécharger le jeu en
             fonction de votre plateforme (macOS, Windows, Linux).
             <Button variant={"outlined"}>
               <CustomExternalUrl
@@ -124,7 +124,7 @@ export const imgArray = [
                 isDecoration={false}
               />
             </Button>
-          </div>
+          </Typography>
         ),
       },
     ],
@@ -137,7 +137,7 @@ export const imgArray = [
       {
         subTitle: "",
         description: (
-          <div>
+          <Typography color="textSecondary">
             j'ai commencé un projet pour réaliser un coffre-fort numérique avec{" "}
             {
               <CustomExternalUrl // Node.js
@@ -159,16 +159,16 @@ export const imgArray = [
                 isDecoration={true}
               />
             }{" "}
-            pour la base de données. Le but étant de pouvoir enregistrer les
+            pour la base de données. Le but est de pouvoir enregistrer les
             mots de passes hashés concernant plusieurs comptes (email, banques,
             etc.).
-          </div>
+          </Typography>
         ),
       },
       {
         subTitle: "",
         description: (
-          <div>
+          <Typography color="textSecondary">
             Pour le back-end, j'ai plus particulièrement utilisé le framework{" "}
             {
               <CustomExternalUrl // NestJS
@@ -179,11 +179,11 @@ export const imgArray = [
             . Et j'ai également hébergé la base de données sous{" "}
             {
               <CustomExternalUrl // docker
-                link={handleCorrectItem("docker")}
+                link={handleCorrectItem("Docker")}
                 isDecoration={true}
               />
             }
-          </div>
+          </Typography>
         ),
       },
     ],
@@ -196,7 +196,7 @@ export const imgArray = [
       {
         subTitle: "",
         description: (
-          <div>
+          <Typography color="textSecondary">
             J'ai fait une multitude de pocs sur{" "}
             {
               <CustomExternalUrl // Node.js
@@ -212,8 +212,8 @@ export const imgArray = [
               />
             }{" "}
             pour tester plusieurs façon de créer une API avec ce framework. Ici,
-            le but était de me familiariser avec ce langage. De plus, j'ai
-            également héberger une base de données{" "}
+            l'objectif était de me familiariser avec ce langage. De plus, j'ai
+            également hébergé une base de données{" "}
             {
               <CustomExternalUrl // MongoDB
                 link={handleCorrectItem("MongoDB")}
@@ -223,12 +223,12 @@ export const imgArray = [
             sous{" "}
             {
               <CustomExternalUrl // docker
-                link={handleCorrectItem("docker")}
+                link={handleCorrectItem("Docker")}
                 isDecoration={true}
               />
             }
             .
-          </div>
+          </Typography>
         ),
       },
     ],
