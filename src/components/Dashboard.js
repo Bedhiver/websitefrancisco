@@ -1,5 +1,11 @@
 import React from "react";
-import { Divider, Typography } from "@material-ui/core";
+import {
+  Button,
+  Card,
+  CardActions,
+  Divider,
+  Typography,
+} from "@material-ui/core";
 import CardDashboardWebsite from "./CardDashboardWebsite";
 import CardDashboardTechnology from "./CardDashboardTechnology";
 import { Grid, Paper } from "@material-ui/core";
@@ -12,6 +18,8 @@ import {
 import "./../styles/DashboardStyle.css";
 import DashboardStyle from "../styles/DashboardStyle";
 import DrawerLeftStyle from "../styles/DrawerLeftStyle";
+import CustomExternalUrl from "./CustomExternalUrl";
+import CV from "../resources/CVDevNode.pdf";
 
 export default function Main() {
   const classes = DrawerLeftStyle();
@@ -30,9 +38,29 @@ export default function Main() {
       </div>
 
       <div className={customStyle.constructionDiv}>
-        <h1>Ce site web est en construction</h1>
-        <h1>Soyez indulgent 😉</h1>
+        <h2>Ce site web est en construction</h2>
+        <h2>Soyez indulgent 😉</h2>
       </div>
+
+      <Card
+        style={{
+          margin: "10px",
+        }}
+      >
+        A propos
+        <CardActions>
+          <Button>
+            <CustomExternalUrl
+              link={{
+                wordLinked: "CV",
+                url: CV,
+              }}
+              isDecoration={false}
+              isDownloadable="Francisco-Fernandez-CV"
+            />
+          </Button>
+        </CardActions>
+      </Card>
 
       <Typography id="techUsedTypo" variant="h5">
         Technologies utilisées pour réaliser ce site web :

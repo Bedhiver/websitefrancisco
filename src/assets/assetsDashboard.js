@@ -17,7 +17,6 @@ import logoJavscript from "./javascript-logo.png";
 import logoJava from "./java-logo.png";
 import logoTypscript from "./typescript-logo.png";
 import logoPostgresql from "./postgresql-logo.png";
-// import developerType from './developerType.jpeg';
 
 export const imgArray = [
   {
