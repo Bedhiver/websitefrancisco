@@ -24,7 +24,7 @@ export default function Main() {
         <img className="secondImage" src={otherWallpaper} alt="" />
         <Paper className={customStyle.paperSurroundTypoStyle} elevation={5}>
           <Typography className={customStyle.typoImageStyle} variant="h2">
-            Développeur d'application
+            Consultant informatique
           </Typography>
         </Paper>
       </div>

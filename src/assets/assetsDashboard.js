@@ -1,6 +1,7 @@
 import muisvg from "./material-ui-1.svg";
 import reactsvg from "./react-1.svg";
 import jssvg from "./logo-javascript.svg";
+import vercelsvg from "./vercel.svg";
 import logoNode from "./nodejs-logo.png";
 import logoNestjs from "./nestjs-logo.png";
 import logoExpressjs from "./expressjs-logo.png";
@@ -39,6 +40,13 @@ export const imgArray = [
     description:
       "Material UI est une bibliothèque de composants conçu pour React. Le développement web est donc plus facile et plus rapide.",
     website: "https://material-ui.com/",
+  },
+  {
+    img: vercelsvg,
+    title: "Vercel",
+    description:
+      "Vercel est une plateforme qui offre la possibilité de déployer des sites web JAMStack ou static.",
+    website: "https://vercel.com/",
   },
 ];
 
