@@ -6,7 +6,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles( (theme) => ({
   root: {
     maxWidth: "100%",
   },
@@ -18,12 +18,12 @@ const useStyles = makeStyles({
   },
   divStyle: {
     minHeight: 300,
-    backgroundColor: "#222222",
+    backgroundColor: theme.palette.secondary.dark,
   },
   cardContent: {
     minHeight: 220,
   },
-});
+}));
 
 export default function CardDashboard({ imgSrc, title, description, website }) {
   const classes = useStyles();
