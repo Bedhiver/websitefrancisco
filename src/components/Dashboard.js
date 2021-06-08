@@ -18,12 +18,29 @@ import {
 import "./../styles/DashboardStyle.css";
 import DashboardStyle from "../styles/DashboardStyle";
 import DrawerLeftStyle from "../styles/DrawerLeftStyle";
+import axios from "axios";
 import CustomExternalUrl from "./CustomExternalUrl";
-import CV from "../resources/CVDevNode.pdf";
 
 export default function Main() {
   const classes = DrawerLeftStyle();
   const customStyle = DashboardStyle();
+
+  async function onDownload(e) {
+    try {
+      e.preventDefault();
+      const response = await axios({
+        url: "https://api-nodemailer-9nhtbc1wy-bedhiver.vercel.app/cv",
+        method: "get",
+        responseType: "blob",
+      });
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", "Francisco-Fernandez-CV.pdf");
+      document.body.appendChild(link);
+      link.click();
+    } catch (err) {}
+  }
 
   return (
     <main className={classes.content}>
@@ -45,18 +62,37 @@ export default function Main() {
       <Card
         style={{
           margin: "10px",
+          padding: "10px",
         }}
       >
-        A propos
+        <h3>A propos</h3>
+        <Divider />
+        <br />
+        <Typography>
+          🚧 🛠 Rubrique en cours de construction 🛠 🚧
+          {/* Je suis un développeur issu d'une formation sur le langage Java/JEE et
+          son écosystème. Après celle-ci j'ai décidé de m'orienter sur les
+          technologies JavaScript. Et je dois vous avouer que j'en suis tombé
+          amoureux 😍. D'ailleurs pour tous mes projets personnels j'utilise
+          donc Node.js pour le back ainsi que différents frameworks comme
+          Express ou Nest.js. Pour le front, ma préférence reste React 😋 même
+          si j'ai également utilisé les deux autres que sont Vue.js et Angular. */}
+        </Typography>
+        <br />
+        <Typography></Typography>
+        <br />
         <CardActions>
-          <Button>
+          <Button variant="outlined" onClick={onDownload}>
+            Télécharger CV
+          </Button>
+          <Button variant="outlined">
             <CustomExternalUrl
               link={{
-                wordLinked: "CV",
-                url: CV,
+                wordLinked: "Contact",
+                url: "/contact",
               }}
               isDecoration={false}
-              isDownloadable="Francisco-Fernandez-CV"
+              isNotNewTab={true}
             />
           </Button>
         </CardActions>

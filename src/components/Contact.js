@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import CodeIcon from '@material-ui/icons/Code';
 import "./../styles/ContactStyle.css";
 import CustomExternalUrl from "./CustomExternalUrl";
 
@@ -182,6 +183,21 @@ export default function Contact() {
                   link={{
                     wordLinked: "LinkedIn",
                     url: "https://www.linkedin.com/in/francisco-fernandez-57990a104/",
+                  }}
+                  isDecoration={false}
+                />
+              </Button>
+            </Grid>
+            <Grid item>
+              <Button
+                size="large"
+                startIcon={<CodeIcon />}
+                variant="outlined"
+              >
+                <CustomExternalUrl
+                  link={{
+                    wordLinked: "WeLoveDevs",
+                    url: "https://francisco-fernandez.welovedevs.com/",
                   }}
                   isDecoration={false}
                 />

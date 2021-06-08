@@ -1,17 +1,19 @@
 import { useTheme } from "@material-ui/core";
 import React from "react";
 
-export default function CustomExternalUrl({ link, isDecoration, isDownloadable }) {
-
-  let foo = isDecoration ? "" : "none"
+export default function CustomExternalUrl({ link, isDecoration, isNotNewTab }) {
+  let decorated = isDecoration ? "" : "none";
+  let newTab = isNotNewTab ? "" : "_blank";
 
   return (
     <a
-      style={{ color: useTheme().palette.text.primary, textDecoration: foo }}
-      target="_blank"
+      style={{
+        color: useTheme().palette.text.primary,
+        textDecoration: decorated,
+      }}
+      target={newTab}
       rel="noreferrer"
       href={link.url}
-      download={isDownloadable}
     >
       {link.wordLinked}
     </a>
