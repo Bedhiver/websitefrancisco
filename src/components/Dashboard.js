@@ -19,7 +19,7 @@ import "./../styles/DashboardStyle.css";
 import DashboardStyle from "../styles/DashboardStyle";
 import DrawerLeftStyle from "../styles/DrawerLeftStyle";
 import axios from "axios";
-import CustomExternalUrl from "./CustomExternalUrl";
+import { Link } from "react-router-dom";
 
 export default function Main() {
   const classes = DrawerLeftStyle();
@@ -49,7 +49,7 @@ export default function Main() {
         <img className="secondImage" src={otherWallpaper} alt="" />
         <Paper className={customStyle.paperSurroundTypoStyle} elevation={5}>
           <Typography className={customStyle.typoImageStyle} variant="h2">
-            Consultant informatique
+            Consultant développeur informatique
           </Typography>
         </Paper>
       </div>
@@ -69,12 +69,12 @@ export default function Main() {
         <Divider />
         <br />
         <Typography>
-          🚧 🛠 Rubrique en cours de construction 🛠 🚧
+          🚧 Rubrique en cours de construction 🚧
           {/* Je suis un développeur issu d'une formation sur le langage Java/JEE et
-          son écosystème. Après celle-ci j'ai décidé de m'orienter sur les
-          technologies JavaScript. Et je dois vous avouer que j'en suis tombé
-          amoureux 😍. D'ailleurs pour tous mes projets personnels j'utilise
-          donc Node.js pour le back ainsi que différents frameworks comme
+          son écosystème. Après celle-ci, j'ai décidé de m'orienter sur les
+          technologies JavaScript. Et je dois avouer que j'en suis tombé
+          amoureux 😍. D'ailleurs, sur tous mes projets personnels j'utilise
+          donc Node.js pour le back ainsi que certains de ses frameworks comme
           Express ou Nest.js. Pour le front, ma préférence reste React 😋 même
           si j'ai également utilisé les deux autres que sont Vue.js et Angular. */}
         </Typography>
@@ -86,18 +86,13 @@ export default function Main() {
             Télécharger CV
           </Button>
           <Button variant="outlined">
-            <CustomExternalUrl
-              link={{
-                wordLinked: "Contact",
-                url: "/contact",
-              }}
-              isDecoration={false}
-              isNotNewTab={true}
-            />
+            <Link className={customStyle.linkNoDecorated} to="/contact">
+              Contact
+            </Link>
           </Button>
         </CardActions>
       </Card>
-
+      <div className={customStyle.spacingDiv} />
       <Typography id="techUsedTypo" variant="h5">
         Technologies utilisées pour réaliser ce site web :
       </Typography>
@@ -126,9 +121,11 @@ export default function Main() {
           </Grid>
         ))}
       </Grid>
-      <div className={classes.toolbar} />
+      <div className={customStyle.spacingDiv} />
       <div style={{ margin: "10px" }}>
-        <h1>Technologies maitrisées ou approchées</h1>
+        <Typography variant="h5">
+          Technologies maitrisées ou approchées
+        </Typography>
         <Divider variant="middle" />
       </div>
       <div className={customStyle.divContainerTechLearnt}>

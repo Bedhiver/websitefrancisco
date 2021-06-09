@@ -73,6 +73,13 @@ const MainStyle = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
   },
+  spacingDiv: {
+    marginTop: "40px",
+  },
+  linkNoDecorated: {
+    textDecoration: "none",
+    color: theme.palette.text.primary,
+  },
 }));
 
 export default MainStyle;
