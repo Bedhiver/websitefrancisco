@@ -68,17 +68,33 @@ export default function Main() {
         <h3>A propos</h3>
         <Divider />
         <br />
+        <Typography className={customStyle.typoAboutCategoryQuestion}>
+          ― Qui es tu ?
+        </Typography>
         <Typography>
-          🚧 Rubrique en cours de construction 🚧
-          {/* Je suis un développeur issu d'une formation sur le langage Java/JEE et
+          {/* 🚧 Rubrique en cours de construction 🚧 */}
+          Je suis un développeur issu d'une formation sur le langage Java/JEE et
           son écosystème. Après celle-ci, j'ai décidé de m'orienter sur les
           technologies JavaScript. Et je dois avouer que j'en suis tombé
           amoureux 😍. D'ailleurs, sur tous mes projets personnels j'utilise
           donc Node.js pour le back ainsi que certains de ses frameworks comme
           Express ou Nest.js. Pour le front, ma préférence reste React 😋 même
-          si j'ai également utilisé les deux autres que sont Vue.js et Angular. */}
+          si j'ai également utilisé les deux autres que sont Vue.js et Angular.
         </Typography>
         <br />
+        <Typography className={customStyle.typoAboutCategoryQuestion}>
+          ― Et mis à part le côté professionnel ?
+        </Typography>
+        <Typography>
+          Que dire à mon sujet ?... On va commencer par dire que je suis surtout
+          quelqu'un de très (trop ?) souriant (même en emoji 😊). Je vis à Lille
+          même, et pour rien au monde je ne quitterai ma région natale et sa
+          population 😊
+        </Typography>
+        <br />
+        <Typography className={customStyle.typoAboutCategoryQuestion}>
+          ― Des hobbies peut-être ?
+        </Typography>
         <Typography></Typography>
         <br />
         <CardActions>

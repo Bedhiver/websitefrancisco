@@ -80,6 +80,10 @@ const MainStyle = makeStyles((theme) => ({
     textDecoration: "none",
     color: theme.palette.text.primary,
   },
+  typoAboutCategoryQuestion: {
+    fontStyle: "italic",
+    fontWeight: "bold",
+  },
 }));
 
 export default MainStyle;
