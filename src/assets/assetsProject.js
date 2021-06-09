@@ -57,11 +57,12 @@ export const imgArray = [
         subTitle: "",
         description: (
           <Typography color="textSecondary">
-            J'ai créé un jeu de ping pong jouable à deux joueurs sur le même clavier afin d'explorer plus
-            en détails les possibilités de JavaScript. C'est un jeu Desktop
-            téléchargeable sur les trois plateformes : macOS, Linux et Windows.
-            Pour le réaliser j'ai utlisé deux frameworks. Pour faire ce jeu j'ai
-            donc eu besoin d'un moteur de jeu,{" "}
+            J'ai créé un jeu de ping pong jouable à deux joueurs sur le même
+            clavier afin d'explorer plus en détails les possibilités de
+            JavaScript. C'est un jeu Desktop téléchargeable sur les trois
+            plateformes : macOS, Linux et Windows. Pour le réaliser j'ai utlisé
+            deux frameworks. Pour faire ce jeu j'ai donc eu besoin d'un moteur
+            de jeu,{" "}
             {
               <CustomExternalUrl // Phaser 3
                 link={handleCorrectItem("Phaser 3")}
@@ -88,43 +89,48 @@ export const imgArray = [
       {
         subTitle: "Téléchargements",
         description: (
-          <Typography
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "10px",
-            }}
-          >
-            Voici les liens permettant de télécharger le jeu en
-            fonction de votre plateforme (macOS, Windows, Linux).
-            <Button variant={"outlined"}>
-              <CustomExternalUrl
-                link={{
-                  wordLinked: "Linux",
-                  url: "https://github.com/Bedhiver/GameElectron/releases/download/0.1.2/GameElectron-Linux.zip",
-                }}
-                isDecoration={false}
-              />
-            </Button>
-            <Button variant={"outlined"}>
-              <CustomExternalUrl
-                link={{
-                  wordLinked: "macOS",
-                  url: "https://github.com/Bedhiver/GameElectron/releases/download/0.1.1/GameElectron-macOS.zip",
-                }}
-                isDecoration={false}
-              />
-            </Button>
-            <Button variant={"outlined"}>
-              <CustomExternalUrl
-                link={{
-                  wordLinked: "Windows",
-                  url: "https://github.com/Bedhiver/GameElectron/releases/download/0.1.0/GameElectron-Windows.zip",
-                }}
-                isDecoration={false}
-              />
-            </Button>
-          </Typography>
+          <div>
+            <Typography>
+              Voici les liens permettant de télécharger le jeu en fonction de
+              votre plateforme (macOS, Windows, Linux).
+            </Typography>
+            <br />
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "10px",
+              }}
+            >
+              <Button variant={"outlined"}>
+                <CustomExternalUrl
+                  link={{
+                    wordLinked: "Linux",
+                    url: "https://github.com/Bedhiver/GameElectron/releases/download/0.1.2/GameElectron-Linux.zip",
+                  }}
+                  isDecoration={false}
+                />
+              </Button>
+              <Button variant={"outlined"}>
+                <CustomExternalUrl
+                  link={{
+                    wordLinked: "macOS",
+                    url: "https://github.com/Bedhiver/GameElectron/releases/download/0.1.1/GameElectron-macOS.zip",
+                  }}
+                  isDecoration={false}
+                />
+              </Button>
+              <Button variant={"outlined"}>
+                <CustomExternalUrl
+                  link={{
+                    wordLinked: "Windows",
+                    url: "https://github.com/Bedhiver/GameElectron/releases/download/0.1.0/GameElectron-Windows.zip",
+                  }}
+                  isDecoration={false}
+                />
+              </Button>
+            </div>
+          </div>
         ),
       },
     ],
@@ -159,8 +165,8 @@ export const imgArray = [
                 isDecoration={true}
               />
             }{" "}
-            pour la base de données. Le but est de pouvoir enregistrer les
-            mots de passes hashés concernant plusieurs comptes (email, banques,
+            pour la base de données. Le but est de pouvoir enregistrer les mots
+            de passes hashés concernant plusieurs comptes (email, banques,
             etc.).
           </Typography>
         ),
