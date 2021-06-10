@@ -1,0 +1,48 @@
+#hiredLogo {
+  display: none;
+}
+
+.hiredLogo {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 40%;
+
+  animation-name: stamp;
+  animation-duration: 0.5s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@media (max-width: 1050px) {
+  .hiredLogo {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    /* transform: translate(-50%, -50%); */
+
+    animation-name: stamp;
+    animation-duration: 0.5s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes stamp {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.5;
+    transform-origin: 50% 50%;
+    transform: rotate(-2deg) scale(5);
+    transition: all 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(-15deg) scale(1);
+  }
+}

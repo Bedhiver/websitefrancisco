@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Button,
-  Card,
-  CardActions,
-  Divider,
-  Typography,
-} from "@material-ui/core";
+import { Button, Card, Divider, Typography } from "@material-ui/core";
 import CardDashboardWebsite from "./CardDashboardWebsite";
 import CardDashboardTechnology from "./CardDashboardTechnology";
 import { Grid, Paper } from "@material-ui/core";
@@ -20,6 +14,8 @@ import DashboardStyle from "../styles/DashboardStyle";
 import DrawerLeftStyle from "../styles/DrawerLeftStyle";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import hiredLogo from "../assets/hired-logo.png";
+import HiredEffect from "../gadgets/HiredEffect";
 
 export default function Main() {
   const classes = DrawerLeftStyle();
@@ -65,48 +61,73 @@ export default function Main() {
           padding: "10px",
         }}
       >
-        <h3>A propos</h3>
-        <Divider />
-        <br />
-        <Typography className={customStyle.typoAboutCategoryQuestion}>
-          ― Qui es tu ?
-        </Typography>
-        <Typography>
-          {/* 🚧 Rubrique en cours de construction 🚧 */}
-          Je suis un développeur issu d'une formation sur le langage Java/JEE et
-          son écosystème. Après celle-ci, j'ai décidé de m'orienter sur les
-          technologies JavaScript. Et je dois avouer que j'en suis tombé
-          amoureux 😍. D'ailleurs, sur tous mes projets personnels j'utilise
-          donc Node.js pour le back ainsi que certains de ses frameworks comme
-          Express ou Nest.js. Pour le front, ma préférence reste React 😋 même
-          si j'ai également utilisé les deux autres que sont Vue.js et Angular.
-        </Typography>
-        <br />
-        <Typography className={customStyle.typoAboutCategoryQuestion}>
-          ― Et mis à part le côté professionnel ?
-        </Typography>
-        <Typography>
-          Que dire à mon sujet ?... On va commencer par dire que je suis surtout
-          quelqu'un de très (trop ?) souriant (même en emoji 😊). Je vis à Lille
-          même, et pour rien au monde je ne quitterai ma région natale et sa
-          population 😊
-        </Typography>
-        <br />
-        <Typography className={customStyle.typoAboutCategoryQuestion}>
-          ― Des hobbies peut-être ?
-        </Typography>
-        <Typography></Typography>
-        <br />
-        <CardActions>
-          <Button variant="outlined" onClick={onDownload}>
-            Télécharger CV
-          </Button>
-          <Button variant="outlined">
-            <Link className={customStyle.linkNoDecorated} to="/contact">
-              Contact
-            </Link>
-          </Button>
-        </CardActions>
+        <div
+          style={{
+            position: "relative",
+          }}
+        >
+          <h3>A propos</h3>
+          <Divider />
+          <br />
+          <Typography className={customStyle.typoAboutCategoryQuestion}>
+            ― Qui es tu ?
+          </Typography>
+          <Typography>
+            {/* 🚧 Rubrique en cours de construction 🚧 */}
+            Je suis un développeur issu d'une formation sur le langage Java/JEE
+            et son écosystème. Après celle-ci, j'ai décidé de m'orienter sur les
+            technologies JavaScript. Et je dois avouer que j'en suis tombé
+            amoureux 😍. D'ailleurs, sur tous mes projets personnels j'utilise
+            donc Node.js pour le back ainsi que certains de ses frameworks comme
+            Express ou Nest.js. Pour le front j'ai expérimenté les trois
+            principaux frameworks, que sont Vue.js, Angular et React. Et ma
+            préférence reste React 😋.
+          </Typography>
+          <br />
+          <Typography className={customStyle.typoAboutCategoryQuestion}>
+            ― Et mis à part le côté professionnel ?
+          </Typography>
+          <Typography>
+            Que dire à mon sujet ?... On va commencer par dire que je suis
+            surtout quelqu'un de très souriant (même en emoji 😊). Je
+            vis à Lille même, et pour rien au monde je ne quitterai ma région
+            natale et sa population 😊. Je suis quelqu'un de simple qui sait
+            savourer les petites choses.
+          </Typography>
+          <br />
+          <Typography className={customStyle.typoAboutCategoryQuestion}>
+            ― Des hobbies peut-être ?
+          </Typography>
+          <Typography>
+            Comme tout bon geek qui se respecte, j'aime les jeux vidéo. Mais pas
+            que. Et comme pas mal de monde, j'aime passer du temps avec des amis
+            autour d'un barbecue, dans un bar, en soirée, etc. Bref. Qu'importe
+            le lieu tant que l'on est bien entouré 😉. Autrement, j'ai également
+            d'autres loisirs un peu plus originaux. Notamment le karting et le
+            paintball 😎.
+          </Typography>
+          <img id="hiredLogo" src={hiredLogo} alt="" />
+          <br />
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "10px",
+            }}
+          >
+            <Button variant="outlined" onClick={onDownload}>
+              Télécharger CV
+            </Button>
+            <Button variant="outlined">
+              <Link className={customStyle.linkNoDecorated} to="/contact">
+                Contact
+              </Link>
+            </Button>
+            <Button variant="outlined" onClick={HiredEffect}>
+              Convaincu ?
+            </Button>
+          </div>
+        </div>
       </Card>
       <div className={customStyle.spacingDiv} />
       <Typography id="techUsedTypo" variant="h5">
