@@ -66,6 +66,9 @@ export default function Main() {
             position: "relative",
           }}
         >
+          <Typography variant="h5">
+            🚧 Rubrique en cours de construction 🚧
+          </Typography>
           <h3>A propos</h3>
           <Divider />
           <br />
@@ -73,7 +76,6 @@ export default function Main() {
             ― Qui es tu ?
           </Typography>
           <Typography>
-            {/* 🚧 Rubrique en cours de construction 🚧 */}
             Je suis un développeur issu d'une formation sur le langage Java/JEE
             et son écosystème. Après celle-ci, j'ai décidé de m'orienter sur les
             technologies JavaScript. Et je dois avouer que j'en suis tombé
@@ -89,10 +91,10 @@ export default function Main() {
           </Typography>
           <Typography>
             Que dire à mon sujet ?... On va commencer par dire que je suis
-            surtout quelqu'un de très souriant (même en emoji 😊). Je
-            vis à Lille même, et pour rien au monde je ne quitterai ma région
-            natale et sa population 😊. Je suis quelqu'un de simple qui sait
-            savourer les petites choses.
+            surtout quelqu'un de très souriant (même en emoji 😊). Je vis à
+            Lille même, et pour rien au monde je ne quitterai ma région natale
+            et sa population 😊. Je suis quelqu'un de simple qui sait savourer
+            les petites choses.
           </Typography>
           <br />
           <Typography className={customStyle.typoAboutCategoryQuestion}>
