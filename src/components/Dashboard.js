@@ -45,14 +45,9 @@ export default function Main() {
         <img className="secondImage" src={otherWallpaper} alt="" />
         <Paper className={customStyle.paperSurroundTypoStyle} elevation={5}>
           <Typography className={customStyle.typoImageStyle} variant="h2">
-            Consultant développeur informatique
+            Développeur informatique
           </Typography>
         </Paper>
-      </div>
-
-      <div className={customStyle.constructionDiv}>
-        <h2>Ce site web est en construction</h2>
-        <h2>Soyez indulgent 😉</h2>
       </div>
 
       <Card
@@ -66,47 +61,62 @@ export default function Main() {
             position: "relative",
           }}
         >
-          <Typography variant="h5">
-            🚧 Rubrique en cours de construction 🚧
-          </Typography>
-          <h3>A propos</h3>
+          <Typography variant="h4">À propos :</Typography>
           <Divider />
           <br />
           <Typography className={customStyle.typoAboutCategoryQuestion}>
-            ― Qui es tu ?
+            ― Bonjour Francisco ! Dis-nous, qui es-tu ?
           </Typography>
           <Typography>
-            Je suis un développeur issu d'une formation sur le langage Java/JEE
-            et son écosystème. Après celle-ci, j'ai décidé de m'orienter sur les
-            technologies JavaScript. Et je dois avouer que j'en suis tombé
-            amoureux 😍. D'ailleurs, sur tous mes projets personnels j'utilise
-            donc Node.js pour le back ainsi que certains de ses frameworks comme
-            Express ou Nest.js. Pour le front j'ai expérimenté les trois
-            principaux frameworks, que sont Vue.js, Angular et React. Et ma
-            préférence reste React 😋.
+            Développeur issu d'une formation sur le langage Java et son
+            écosystème. Aujourd'hui, j'ai décidé de m'orienter sur les
+            technologies JavaScript. Dont je suis radicalement tombé amoureux
+            😍.
+            <br />
+            Sur tous mes projets actuels, j'utilise donc Node.js pour le
+            <span className="text-bold"> back-end</span>, accompagné de ses
+            principaux frameworks : <span className="text-bold">Express</span>,{" "}
+            <span className="text-bold">Nest.js </span>
+            et bien d'autre.
+            <br />
+            Question <span className="text-bold">front-end</span> j'ai
+            expérimenté les trois principaux frameworks, que sont{" "}
+            <span className="text-bold">Vue.js</span>,
+            <span className="text-bold"> Angular</span> et
+            <span className="text-bold"> React</span>.
+            <br />
+            Et ma préférence reste <span className="text-bold">React</span> 😋.
           </Typography>
           <br />
           <Typography className={customStyle.typoAboutCategoryQuestion}>
-            ― Et mis à part le côté professionnel ?
+            ― Très bien ! Et si tu nous parlais de ta personalité ?
           </Typography>
           <Typography>
-            Que dire à mon sujet ?... On va commencer par dire que je suis
-            surtout quelqu'un de très souriant (même en emoji 😊). Je vis à
-            Lille même, et pour rien au monde je ne quitterai ma région natale
-            et sa population 😊. Je suis quelqu'un de simple qui sait savourer
-            les petites choses.
+            Que dire à mon sujet ? On va commencer par dire que je suis surtout
+            quelqu'un de très souriant (même en emoji 🤓). Avenant, appréciant
+            l'exercice de toujours faire preuve d'humour. Vivant à Lille, ville
+            que j'aime, ainsi que mon cher département du Nord. Je suis
+            quelqu'un de simple, qui sait savourer les petites choses de la vie.
           </Typography>
           <br />
           <Typography className={customStyle.typoAboutCategoryQuestion}>
             ― Des hobbies peut-être ?
           </Typography>
           <Typography>
-            Comme tout bon geek qui se respecte, j'aime les jeux vidéo. Mais pas
-            que. Et comme pas mal de monde, j'aime passer du temps avec des amis
-            autour d'un barbecue, dans un bar, en soirée, etc. Bref. Qu'importe
-            le lieu tant que l'on est bien entouré 😉. Autrement, j'ai également
-            d'autres loisirs un peu plus originaux. Notamment le karting et le
-            paintball 😎.
+            Comme tout bon passionné d'informatique qui se respecte, j'aime les
+            jeux vidéo. Mais pas uniquement ! Passer du temps avec des amis
+            autour d'un barbecue, dans un bar, en soirée, etc. <br />
+            Bref. Qu'importe le lieu tant que l'on est bien entouré 😉.
+            Autrement, j'ai également d'autres loisirs un peu plus originaux.
+            Notamment le karting et le paintball 😎.
+          </Typography>
+          <br />
+          <Typography className={customStyle.typoAboutCategoryQuestion}>
+            ― Merci pour cette présentation, le mot de la fin ?
+          </Typography>
+          <Typography>
+            Une discussion autour d'un café ☕️ par exemple, vous êtes partant ?
+            😀
           </Typography>
           <img id="hiredLogo" src={hiredLogo} alt="" />
           <br />
