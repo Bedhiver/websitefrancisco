@@ -25,7 +25,7 @@ export default function Main() {
     try {
       e.preventDefault();
       const response = await axios({
-        url: "https://api-nodemailer-9nhtbc1wy-bedhiver.vercel.app/cv",
+        url: "https://api-nodemailer.vercel.app/cv",
         method: "get",
         responseType: "blob",
       });
