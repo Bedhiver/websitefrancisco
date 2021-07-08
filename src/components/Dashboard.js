@@ -89,14 +89,15 @@ export default function Main() {
           </Typography>
           <br />
           <Typography className={customStyle.typoAboutCategoryQuestion}>
-            ― Très bien ! Et si tu nous parlais de ta personalité ?
+            ― Très bien ! Et si tu nous parlais de ta personnalité ?
           </Typography>
           <Typography>
             Que dire à mon sujet ? On va commencer par dire que je suis surtout
-            quelqu'un de très souriant (même en emoji 🤓). Avenant, appréciant
-            l'exercice de toujours faire preuve d'humour. Vivant à Lille, ville
-            que j'aime, ainsi que mon cher département du Nord. Je suis
-            quelqu'un de simple, qui sait savourer les petites choses de la vie.
+            quelqu'un de très souriant (même en emoji 😊). J'essaye toujours de
+            rajouter quelques pincées d'humour dans les conversations, histoire
+            de les rendre plus épicées. Vivant à Lille, ville que j'aime, ainsi
+            que mon cher département du Nord. Je suis quelqu'un de simple, qui
+            sait savourer les petites choses de la vie.
           </Typography>
           <br />
           <Typography className={customStyle.typoAboutCategoryQuestion}>
