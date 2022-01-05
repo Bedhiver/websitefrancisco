@@ -51,8 +51,8 @@ export default function Main() {
       </div>
 
       <Card
+        id="about"
         style={{
-          margin: "10px",
           padding: "10px",
         }}
       >
